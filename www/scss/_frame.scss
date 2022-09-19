@@ -1,0 +1,340 @@
+.frame{
+    display: grid;
+    width: 100%;;
+    max-width: 1290px;
+    height: 100%;
+    // min-height: 900px;
+    padding-bottom: constant(safe-area-inset-bottom);
+    padding-bottom: env(safe-area-inset-bottom);
+    grid-template-rows: 100%;
+    grid-template-columns: 130px minmax(0, 1fr);
+    grid-template-areas:"menu main";
+    margin: auto;
+    @include mw_lg {
+        grid-template-columns: 80px minmax(0, 1fr);
+    }
+
+    @include mw_md {
+        grid-template-rows: minmax(0, 1fr) 50px;
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas:"main"
+                            "menu";
+    }
+
+    @include mw_ls {
+        grid-template-rows: minmax(0, 1fr);
+        grid-template-columns: 50px minmax(0, 1fr);
+        grid-template-areas: "menu main";
+    }
+
+    // .frame__menu
+    &__menu {
+        grid-area: menu;
+        background: map-get($bg_color, primary);
+        z-index: 5;
+        @include mw_md{
+            @include d_f(flex, center, center);
+            position: relative;
+        }
+        @include mw_ls{
+            flex-direction: column;
+        }
+    }
+
+    // 主要iframe
+    .mainView {
+        grid-area: 1 / 1 / 2 / 3;
+        width: 100%;
+        height: 100%;
+    }
+
+    // .frame__main 塞在iframe.mainView裡面
+    &__main {
+        height: 100%;
+        display: grid;
+        grid-template-rows: 50px minmax(0, 1fr);
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas:"nav"
+                            "inside";
+        padding-left: 130px;
+
+        @include fine {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        &.--agree{
+            max-width: 1290px;
+            height: 100%;
+            padding-left: 0;
+            margin: auto;
+        }
+
+        @include mw_lg{
+            padding-left: 80px;
+        }
+        @include mw_md{
+            padding-left: 0;
+        }
+
+        @include mw_xs{
+            grid-template-rows: 40px minmax(0, calc(100vh - 40px));
+        }
+
+        // .frame__main__nav
+        &__nav{
+            @include d_f(flex, center, flex-start);
+            grid-area: nav;
+
+            padding: 0 20px;
+            background: map-get($bg_color, primary_vl);
+            z-index: 4;
+
+            @include mw_xs{
+                padding: 0 10px;
+            }
+        }
+
+        // 遊戲室專屬 .frame__main__inside
+        &__inside {
+            grid-area: inside;
+
+            display: grid;
+            grid-template-rows: 450px 80px minmax(250px, 270px);
+            grid-template-columns: 700px minmax(0, 1fr);
+            grid-template-areas:"video order"
+                                "table order"
+                                "road details";
+            
+            @include mw_lg {
+                grid-template-rows: 430px 30px minmax(200px, 250px);
+                grid-template-columns: 700px minmax(0, 1fr);
+            }
+
+            @include mw_md {
+                @include scrollbar(hidden, auto);
+                grid-template-rows: 400px 30px minmax(250px, 270px);
+                height: 100%;
+            }
+            @include mw_sm {
+                grid-template-areas:"video"
+                                    "order"
+                                    "road";
+                grid-template-rows: 45vw 1fr minmax(220px, 230px);
+                grid-template-columns: minmax(0, 1fr);
+
+                // 選擇桌次展開
+                @at-root .--tableOpen .frame__main__inside {
+                    grid-template-areas:"video"
+                                        "table"
+                                        "order"
+                                        "road";
+                    grid-template-rows: 45vw 120px 1fr minmax(220px, 230px);
+                }
+            }
+            @include mw_xs {
+                grid-template-rows: 50vw 1fr minmax(230px, 240px);
+
+                // 選擇桌次展開
+                @at-root .--tableOpen .frame__main__inside {
+                    grid-template-rows: 50vw 120px 1fr minmax(230px, 240px);
+                }
+            }
+
+            @include mw_lowhigh {
+                grid-template-rows: 430px 30px minmax(250px, 270px);
+            }
+
+            .video {
+                grid-area: video;
+
+                background-color: map-get($bg_color, black);
+                @include mw_sm{
+                    grid-area: 1 / 1 / 2 / 2;
+                }
+            }
+
+            .table {
+                grid-area: table;
+
+                background-color: map-get($bg_color, black);
+                z-index: 2;
+
+                @include mw_sm {
+                    grid-area: auto;
+                    display: none;
+
+                    // 選擇桌次展開
+                    @at-root .--tableOpen .table {
+                        display: flex;
+                    }
+                }
+            }
+
+            .order {
+                grid-area: order;
+
+                @include mw_sm {
+                    grid-area: 2 / 1 / 3 / 2;
+
+                    // 選擇桌次展開
+                    @at-root .--tableOpen .order {
+                        grid-area: auto;
+                    }
+                }
+            }
+
+            .road {
+                grid-area: road;
+                
+                z-index: 1;
+
+                @include mw_sm {
+                    min-height: 130px;
+                }
+            }
+
+            .detail {
+                grid-area: details;
+
+                z-index: 3;
+
+                @include mw_sm {
+                    grid-area: 1 / 1 / 2 / 2;
+                }
+            }
+
+
+
+
+            .result{
+                @include d_f(flex, center, center);
+                grid-area: road;
+
+                background: map-get($bg_color, black_alpha);
+                z-index: 2;
+            }
+        }
+
+        // 多桌 .frame__main__multi
+        &__multi{
+            grid-area: inside;
+
+            display: grid;
+            grid-template-rows: 410px minmax(200px, 1fr);
+            grid-template-columns: 550px minmax(0, 1fr);
+            grid-template-areas:"video bet"
+                                "select bet";
+
+            .video{
+                grid-area: video;
+            }
+            .selectTB{
+                grid-area: select;
+            }
+            .betArea {
+                grid-area: bet;
+            }
+        }
+
+        // 其他頁面 .frame__main__otherinside
+        &__otherinside {
+            grid-area: inside;
+
+            @include mw_md {
+                @include scrollbar(hidden, auto);
+            }
+        }
+    }
+}
+
+
+
+// 彈出iframe控制
+.alertBox,
+.plugBox {
+    @include pos_a(trbl, 0);
+    margin: auto;
+    z-index: 10;
+
+    iframe {
+        width: 100%;
+        height: 100%;
+    }
+}
+.plugBox {
+    z-index: 4;
+
+    // 彈出功能頁面如需要像.frame__main功能時用.plugBox__main
+    &__main {
+        width: 100%;
+        height: 100%;
+        padding-left: 130px;
+        background: map-get($bg_color, black_lightalpha);
+
+        @include mw_lg {
+            padding-left: 80px;
+        }
+
+        @include mw_md {
+            padding-left: 0;
+        }
+    }
+}
+
+
+// 大loading遮罩
+.loadingBg {
+    @include load_set;
+    @include pos_a(trbl, 0);
+    background: map-get($bg_color, black_alpha);
+    margin: auto;
+    z-index: 10;
+}
+
+
+
+// 主要區塊配置===========
+// 外層高度控制
+.frame {
+    height: 790px;
+
+    @include mw_lg {
+        height: 100%;
+    }
+
+    @include mw_lowhigh {
+        height: 765px;
+    }
+}
+
+// 視訊放大
+.frame.--bigTv {
+    height: 850px;
+
+    @include mw_lowhigh {
+        height: 765px;
+    }
+}
+
+.--bigTv .frame__main__inside {
+    grid-template-rows: 550px 20px 200px 30px;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:"video"
+                        "table"
+                        "order"
+                        "road";
+    @include mw_lowhigh {
+        grid-template-rows: 470px 20px 190px 25px;
+    }
+}
+
+// 內層配置
+.--bigTv .detail,
+.--bigTv .result{
+    display: none;
+}
+
+
