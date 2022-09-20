@@ -1,6 +1,6 @@
 @charset "UTF-8";
 *{
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Raleway', sans-serif;
 	box-sizing: border-box;
 	-webkit-touch-callout: none;
 	-webkit-text-size-adjust: none;
@@ -60,9 +60,9 @@ body {
 }
 
 a{
-	text-decoration: none;
 	color: inherit;
-	font-weight: inherit;
+	font-family: 'Roboto', sans-serif;
+	text-decoration: none;
 }
 
 input[type=number]::-webkit-inner-spin-button,

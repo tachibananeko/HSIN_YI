@@ -34,6 +34,7 @@ header{
         >li{
             @extend %hand;
             margin-left: 32px;
+            font-family: 'Roboto', sans-serif;
             font-weight: 700;
 
             // 多內層按鈕
@@ -75,6 +76,7 @@ header{
                 padding: 8px 0;
 
                 &.--on {
+                    @extend %no_hand;
                     position: relative;
                     color: map-get($txt_color, blue);
 
@@ -185,7 +187,6 @@ main{
             @extend %hand;
             position: relative;
             line-height: 24px;
-            font-family: 'Raleway', sans-serif;
 
             &+li{
                 margin-bottom: 8px;
@@ -242,7 +243,6 @@ main{
 .copyright{
     padding: 20px 32px;
     background: map-get($bg_color, secondary);
-    font-family: 'Raleway', sans-serif;
     font-size: 14px;
     text-align: center;
 }

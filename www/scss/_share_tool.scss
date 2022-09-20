@@ -16,15 +16,6 @@
     }
 }
 
-
-.radio_style{
-    @include radio(12px, map-get($bg_color, lightbrown));
-}
-
-.checkbox_style{
-    @include checktick(15px, 2px, 2px, map-get($bg_color , brown));
-}
-
 .show_sm {
     @include mw_md {
         display: none;

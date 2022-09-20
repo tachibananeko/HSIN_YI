@@ -15,10 +15,11 @@ $bg_color: (
     white: #fff,
     black: #000,
     blue: #08C1F2,
-    gray: #EBEBEB,
-    lightgray: #999,
+    lightgray: #EBEBEB,
+    gray: #999,
     darkgray: #666,
     black_alpha: rgba(5, 14, 41, 0.8),
+    linear: linear-gradient(to top, #141D38 0%, #050E29 100%),
 );
 
 // 裝飾線色
