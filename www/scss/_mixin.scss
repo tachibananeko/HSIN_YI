@@ -34,10 +34,16 @@
     }
 }
 
-@mixin d_f($flex, $ai, $jc) {
+@mixin d_f($flex, $ai: stretch, $jc: flex-start) {
 	display: $flex;
-	align-items: $ai;
-	justify-content: $jc;
+
+	@if ($ai !=0) {
+		align-items: $ai;
+	}
+
+	@if ($jc !=0) {
+		justify-content: $jc;
+	}
 }
 
 // 多行縮字點點點

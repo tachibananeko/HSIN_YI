@@ -17,13 +17,15 @@
 
 <body>
 
+    <!-- 捲軸捲動時加上.--fix -->
     <header>
         <h1>HSIN YI</h1>
-        <ul>
-            <li><a href="">ABOUT</a></li>
+        <!-- 當前選項加上.--on 點擊打開內容選單 .--active -->
+        <ul class="menu">
+            <li>ABOUT</li>
             <li class="--more">
-                <a href="">SERVICES</a>
-                <ul>
+                SERVICES
+                <ul class="active_item">
                     <li>Expert Consultancy</li>
                     <li>Project Delivery</li>
                     <li>Critical Operations</li>
@@ -31,15 +33,15 @@
                 </ul>
             </li>
             <li class="--more">
-                <a href="">PRODUCTS</a>
-                <ul>
+                PRODUCTS
+                <ul class="active_item">
                     <li>Application Protection</li>
                     <li>Origin Protection</li>
                     <li>DNS Protection</li>
                 </ul>
             </li>
-            <li><a href="">CONTACT</a></li>
-            <li><a href="">+65 6996 7685</a></li>
+            <li>CONTACT</li>
+            <li><a href="tel:+65-6996-7685">+65 6996 7685</a></li>
         </ul>
     </header>
 
@@ -240,52 +242,56 @@
         <div class="webMap">
             <ul class="webMap__links">
                 <li>
-                    <a href="">Useful Links</a>
+                    Useful Links
                 </li>
                 <li>
-                    <a href="">Home</a>
+                    Home
                 </li>
                 <li>
-                    <a href="">About</a>
+                    About
                 </li>
                 <li>
-                    <a href="">Contact</a>
+                    Contact
                 </li>
                 <li>
-                    <a href="">Privacy Policy</a>
+                    Privacy Policy
                 </li>
             </ul>
 
             <ul class="webMap__services">
                 <li>
-                    <a href="">Services</a>
+                    Services
                 </li>
                 <li>
-                    <a href="">Expert Consultancy</a>
+                    Expert Consultancy
                 </li>
                 <li>
-                    <a href="">Project Delivery</a>
+                    Project Delivery
                 </li>
                 <li>
-                    <a href="">Critical Operations</a>
+                    Critical Operations
                 </li>
                 <li>
-                    <a href="">Connected Technologies</a>
+                    Connected Technologies
                 </li>
             </ul>
 
             <ul class="webMap__contact">
+                <li>Our Address</li>
                 <li>
-                    Our Address 8 Eu Tong Sen Street #19-91,92 The Central Singapore 059818
+                    8 Eu Tong Sen Street #19-91,92 The Central Singapore 059818
                 </li>
                 <li>
-                    <i class="icon_tel"></i>+65 6996 7685
+                    <i class="icon_tel"></i>
+                    <a href="tel:+65-6996-7685">+65 6996 7685</a>
                 </li>
                 <li>
-                    <i class="icon_fax"></i>+65 6224 2298
+                    <i class="icon_fax"></i>
+                    +65 6224 2298
                 </li>
                 <li>
-                    <i class="icon_mail"></i>assistant@hsinyi-sg.com
+                    <i class="icon_mail"></i>
+                    <a href="mailto:assistant@hsinyi-sg.com">assistant@hsinyi-sg.com</a>
                 </li>
             </ul>
         </div>
@@ -294,7 +300,7 @@
 
 
         <!-- copyright -->
-        <div class="copyright">© 2016 <a href="">HSIN YI</a> All Rights Reserved.</div>
+        <div class="copyright">© 2016 HSIN YI All Rights Reserved.</div>
         <!-- copyright end -->
     </footer>
 </body>

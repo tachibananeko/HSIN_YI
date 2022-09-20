@@ -137,115 +137,14 @@
 		}
 	}
 }
-
-// 百家按鈕基本組件
-@mixin btn_set($width, $height, $bg){
-	position: relative;
-	width: $width;
-	height: $height;
-	background: $bg;
-}
-@mixin btn_txt($jc, $color, $shadow) {
-	@include d_f(flex, center, $jc);
-	@extend %hand;
-	content: attr(data-txt);
-	position: relative;
-	width: 100%;
-	height: 100%;	
-	color: $color;
-	text-shadow: 2px 1px $shadow;
-	pointer-events: none;
-	// white-space: nowrap;
-}
-// 內部span漸層
-@mixin btn_hoveritem($bg_img) {
-	@include pos_a(tl, 0);
-	width: 100%;
-	height: 100%;
-	background: $bg_img;
-	opacity: 0;
-	transition: all .3s .1s ease-in-out;
-	@content;
-}
-// 按鈕圓弧反光層
-@mixin btn_hoverlight01($bgx) {
-	@include pos_a(tl, 0);
-	content: '';
-	width: 100%;
-	height: 100%;
-	background: radial-gradient(100% 105% ellipse, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, .25) 51%, rgba(255, 255, 255, .25) 100%);
-	background-size: $bgx 200%;
-	background-repeat: no-repeat;
-}
-// 按鈕切角反光層
-@mixin btn_hoverlight02 {
-	@include pos_a(tl, 0);
-	content: '';
-	width: 100%;
-	height: 100%;
-	background: linear-gradient(127deg, rgba(255, 255, 255, .2) 40%, transparent 41%, transparent 100%);
-}
-
-// _on效果
-@mixin btn_on($color) {
-	&.--on{
-		@extend %no_hand;
-
-		&::after {
-			color: $color;
-		}
-
-		.hover_item {
-			opacity: 1;
-		}
-		@content;
-	}
-	
-}
-
 // icon設定
 $icon: (
-	'firefox',
-	'google',
-	'download',
-	'language',
-	'downArr',
-	'member',
-	'backlobby',
-	'history',
-	'rule',
-	'info',
-	'activity',
-	'logout',
-	'back',
-	'titlechange',
-	'titlemem',
-	'titlemoney',
-	'titletip',
-	'bank_tw',
-	'play_tw',
-	'bank_cn',
-	'play_cn',
-	'bank_en',
-	'play_en',
-	'filled_bank',
-	'filled_play',
-	'hollow_bank',
-	'hollow_play',
-	'slash_bank',
-	'slash_play',
-	'detail',
-	'rwm',
-	'ibo',
-	'cockfight',
-	'a5',
-	'rule_chips',
-	'rule_poker',
-	'balance',
-	'result',
-	'help_btn',
-	'info_btn',
-	'rotate'
+		'tel',
+		'mail',
+		'fax',
+		'address',
+		'services',
+		'links',
 );
 
 @each $name in $icon {

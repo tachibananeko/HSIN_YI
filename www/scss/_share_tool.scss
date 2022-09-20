@@ -1,11 +1,14 @@
 
 // 動畫
 .active_item {
+    @extend %transition;
     opacity: 0;
     visibility: collapse;
+    transform-origin: center top;
+    z-index: 2;
 }
 
-.active {
+.--active {
     > .active_item,
     ~ .active_item {
         visibility: visible;
@@ -13,70 +16,6 @@
     }
 }
 
-// 通用的input select checkbox等
-.input_style{
-    width: calc(100% - 100px);
-    height: 30px;
-    padding: 0 10px;
-    background: map-get($bg_color , darkgray);
-    border-radius: 3px;
-    color: map-get($txt_color, white);
-
-    // 手指效果
-    @include hoverHandler{
-        box-shadow: 0 0 5px map-get($bg_color, secondary) inset;
-        
-        @at-root .input_style:focus{
-            box-shadow: 0 0 5px map-get($bg_color, secondary) inset;
-        }
-    }
-}
-
-.select_style{
-    position: relative;
-    min-width: 120px;
-    height: 30px;
-
-    &::after{
-        @include pos_a(trb, 0, 5px, 0);
-        @include triangle(8px, map-get($txt_color, white), bottom);
-        content: '';
-        margin: auto;
-    }
-
-    select{
-        width: 100%;
-        height: 100%;
-        padding: 0 20px 0 10px;
-        background: map-get($bg_color, darkgray);
-        border-radius: 3px;
-        color: map-get($txt_color, white);
-    }
-}
-
-// select組合
-.select_group{
-    @include d_f(flex, center, space-between);
-    margin: 0 20px;
-
-    @include mw_xs{
-        margin: 10px 0 0;
-        order: 1;
-    }
-
-    .select_style:first-child{
-        margin-right: 20px;
-
-        &::before {
-            @include pos_a(tbl, 0, 0, calc(100% + 5px));
-            content: '';
-            width: 10px;
-            height: 1px;
-            background: map-get($bg_color, white);
-            margin: auto;
-        }
-    }
-}
 
 .radio_style{
     @include radio(12px, map-get($bg_color, lightbrown));
@@ -86,77 +25,6 @@
     @include checktick(15px, 2px, 2px, map-get($bg_color , brown));
 }
 
-
-
-// 可共用元件
-// 左上關閉按鈕
-.close_btn{
-    @include btn_set(20px, 20px, url(../images/icon_x.svg) no-repeat center / 80%);
-
-    // 手指效果
-    @include hoverHandler{
-        transform: scale(1.2);
-    }
-}
-
-// 通用確定取消按鈕
-.func{
-        @include d_f(flex, center, center);
-        flex: none;
-
-
-    // .func_btn
-    &_btn{
-        @include btn_set(calc(100% / 2 - 10px), 35px, map-get($btn_color, lightblue));
-        @include radius_hidden();
-        border: 1px solid map-get($bg_color, lightblue);
-
-        &::before{
-            @include btn_hoverlight01(150%);
-        }
-        &::after{
-            @include btn_txt(center, map-get($txt_color, primary), map-get($txt_color, shadow));
-            font-weight: bold;
-            
-        }
-        .hover_item{
-            @include btn_hoveritem(map-get($btn_color, blue));
-            box-shadow: 0 0 3px map-get($bg_color, secondary) inset,
-                        0 0 6px map-get($bg_color, secondary) inset;
-            &::before {
-                @include btn_hoverlight01(200%);
-            }
-        }
-
-        // 紅色款
-        &.--red {
-            background: map-get($btn_color, lightred);
-            border-color: map-get($bg_color, secondary);
-            
-            .hover_item {
-                background: map-get($btn_color, red);
-            }
-        }
-
-        // 手指效果
-        @include btn_hoverHandler(1px 0, map-get($txt_color, primary));
-    }
-}
-
-// 可點擊字串
-.txtlink_style{
-    @extend %hand;
-    color: map-get($txt_color, secondary02);
-    font-weight: bold;
-    text-decoration: underline;
-
-    // 手指效果
-    @include hoverHandler{
-        color: map-get($txt_color, primary);
-    
-    }
-}
-
 .show_sm {
     @include mw_md {
         display: none;
@@ -164,83 +32,5 @@
 
     @include mw_sm {
         display: block;
-    }
-}
-
-// 橫向阻擋
-.noRotate {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: calc(100% - 50px);
-    height: 100%;
-    background: map-get($bg_color, black);
-    z-index: 10;
-
-    // .noRotate__item
-    &__item {
-        @include pos_a(trbl, 0);
-        width: 300px;
-        height: 200px;
-        margin: auto;
-
-        &__img {
-            @include d_f(flex, center, center);
-            position: relative;
-            width: 80px;
-            height: 130px;
-            border: 0 solid map-get($bg_color, gray);
-            background: map-get($bg_color, black);
-            border-radius: 10px;
-            margin: 0 auto 20px;
-            transform: rotate(90deg);
-
-            i {
-                width: 50px;
-                height: 50px;
-                opacity: 0;
-                transform: rotate(90deg);
-            }
-        }
-
-        &__txt {
-            text-align: center;
-            color: map-get($txt_color, primary);
-            opacity: 0;
-        }
-    }
-
-    @include mw_ls {
-
-        &__item__img {
-            animation: borderIncrease .2s .3s forwards ease,
-                rotateRight .5s 1s forwards ease;
-
-            i {
-                animation: fadeIn .5s .5s forwards ease;
-            }
-        }
-
-        &__item__txt {
-            animation: fadeIn .5s 1s forwards ease;
-        }
-    }
-}
-
-@keyframes borderIncrease {
-    100% {
-        border-width: 16px 8px;
-    }
-}
-
-@keyframes rotateRight {
-    100% {
-        transform: rotate(0);
-    }
-}
-
-@keyframes fadeIn {
-    100% {
-        opacity: 1;
     }
 }

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Roboto:wght@400;700&display=swap');
 @import "share_variable";
 @import "reset";
 @import "mixin";
@@ -9,7 +9,7 @@
 
 
 // layout
-@import "frame"; //框架(head foot)
+@import "frame"; //框架
 @import "home"; //主頁
 @import "other_page"; //其他頁面
 

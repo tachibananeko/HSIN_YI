@@ -1,340 +1,166 @@
-.frame{
-    display: grid;
-    width: 100%;;
-    max-width: 1290px;
-    height: 100%;
-    // min-height: 900px;
-    padding-bottom: constant(safe-area-inset-bottom);
-    padding-bottom: env(safe-area-inset-bottom);
-    grid-template-rows: 100%;
-    grid-template-columns: 130px minmax(0, 1fr);
-    grid-template-areas:"menu main";
-    margin: auto;
-    @include mw_lg {
-        grid-template-columns: 80px minmax(0, 1fr);
+header{
+    @include d_f(flex, center, 0);
+    height: 64px;
+    padding: 8px 32px;
+    background: map-get($bg_color, secondary);
+
+    // head固定
+    &.--fix{
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        box-shadow: 3px 3px 15px map-get($bg_color, black_alpha);
     }
 
-    @include mw_md {
-        grid-template-rows: minmax(0, 1fr) 50px;
-        grid-template-columns: minmax(0, 1fr);
-        grid-template-areas:"main"
-                            "menu";
-    }
+    h1{
+        @extend %hand;
+        height: 100%;
+        width: 150px;
+        background: url(../images/img_logo.png) no-repeat center / contain;
+        color: transparent;
 
-    @include mw_ls {
-        grid-template-rows: minmax(0, 1fr);
-        grid-template-columns: 50px minmax(0, 1fr);
-        grid-template-areas: "menu main";
-    }
-
-    // .frame__menu
-    &__menu {
-        grid-area: menu;
-        background: map-get($bg_color, primary);
-        z-index: 5;
-        @include mw_md{
-            @include d_f(flex, center, center);
-            position: relative;
+        // 手指效果
+        @include hoverHandler {
+            filter: brightness(1.2);
         }
-        @include mw_ls{
+    }
+
+    .menu{
+        @include d_f(flex, 0, 0);
+        margin-left: auto;
+        color: map-get($txt_color, white);
+
+        >li{
+            @extend %hand;
+            margin-left: 32px;
+            font-weight: 700;
+
+            // 多內層按鈕
+            &.--more{
+                position: relative;
+
+                &::after {
+                    content: '+';            
+                    margin-left: 8px;
+                }
+            }
+
+            &:last-child,
+            &.--on,
+            &.--active{
+                color: map-get($txt_color, blue);
+            }
+            // 手指效果
+            @include hoverHandler {
+                color: map-get($txt_color, blue);
+            }
+        }
+
+        // 內層選單
+        ul{
+            @include pos_a(tl, calc(100% + 16px), 0);
+            @include d_f(flex, center, 0);
+            @include border(1px 0 0, map-get($border_color, primary));
             flex-direction: column;
-        }
-    }
+            padding: 8px 16px;
+            background: map-get($bg_color, secondary);
+            box-shadow: 5px 5px 10px map-get($bg_color, black_alpha);
+            color: map-get($txt_color, white);
+            font-size: 14px;
+            text-align: center;
 
-    // 主要iframe
-    .mainView {
-        grid-area: 1 / 1 / 2 / 3;
-        width: 100%;
-        height: 100%;
-    }
+            li{
+                white-space: nowrap;
+                padding: 8px 0;
 
-    // .frame__main 塞在iframe.mainView裡面
-    &__main {
-        height: 100%;
-        display: grid;
-        grid-template-rows: 50px minmax(0, 1fr);
-        grid-template-columns: minmax(0, 1fr);
-        grid-template-areas:"nav"
-                            "inside";
-        padding-left: 130px;
+                &.--on {
+                    position: relative;
+                    color: map-get($txt_color, blue);
 
-        @include fine {
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-        }
-
-        &.--agree{
-            max-width: 1290px;
-            height: 100%;
-            padding-left: 0;
-            margin: auto;
-        }
-
-        @include mw_lg{
-            padding-left: 80px;
-        }
-        @include mw_md{
-            padding-left: 0;
-        }
-
-        @include mw_xs{
-            grid-template-rows: 40px minmax(0, calc(100vh - 40px));
-        }
-
-        // .frame__main__nav
-        &__nav{
-            @include d_f(flex, center, flex-start);
-            grid-area: nav;
-
-            padding: 0 20px;
-            background: map-get($bg_color, primary_vl);
-            z-index: 4;
-
-            @include mw_xs{
-                padding: 0 10px;
-            }
-        }
-
-        // 遊戲室專屬 .frame__main__inside
-        &__inside {
-            grid-area: inside;
-
-            display: grid;
-            grid-template-rows: 450px 80px minmax(250px, 270px);
-            grid-template-columns: 700px minmax(0, 1fr);
-            grid-template-areas:"video order"
-                                "table order"
-                                "road details";
-            
-            @include mw_lg {
-                grid-template-rows: 430px 30px minmax(200px, 250px);
-                grid-template-columns: 700px minmax(0, 1fr);
-            }
-
-            @include mw_md {
-                @include scrollbar(hidden, auto);
-                grid-template-rows: 400px 30px minmax(250px, 270px);
-                height: 100%;
-            }
-            @include mw_sm {
-                grid-template-areas:"video"
-                                    "order"
-                                    "road";
-                grid-template-rows: 45vw 1fr minmax(220px, 230px);
-                grid-template-columns: minmax(0, 1fr);
-
-                // 選擇桌次展開
-                @at-root .--tableOpen .frame__main__inside {
-                    grid-template-areas:"video"
-                                        "table"
-                                        "order"
-                                        "road";
-                    grid-template-rows: 45vw 120px 1fr minmax(220px, 230px);
-                }
-            }
-            @include mw_xs {
-                grid-template-rows: 50vw 1fr minmax(230px, 240px);
-
-                // 選擇桌次展開
-                @at-root .--tableOpen .frame__main__inside {
-                    grid-template-rows: 50vw 120px 1fr minmax(230px, 240px);
-                }
-            }
-
-            @include mw_lowhigh {
-                grid-template-rows: 430px 30px minmax(250px, 270px);
-            }
-
-            .video {
-                grid-area: video;
-
-                background-color: map-get($bg_color, black);
-                @include mw_sm{
-                    grid-area: 1 / 1 / 2 / 2;
-                }
-            }
-
-            .table {
-                grid-area: table;
-
-                background-color: map-get($bg_color, black);
-                z-index: 2;
-
-                @include mw_sm {
-                    grid-area: auto;
-                    display: none;
-
-                    // 選擇桌次展開
-                    @at-root .--tableOpen .table {
-                        display: flex;
+                    &::before{
+                        @include pos_a(trb, 0, calc(100% + 8px), 0);
+                        content: '';
+                        width: 5px;
+                        height: 5px;
+                        background: map-get($txt_color, blue);
+                        border-radius: 5px;
+                        margin: auto;
                     }
                 }
+
+                // 手指效果
+                @include hoverHandler {
+                    color: map-get($txt_color, blue);
+                }
+            }
+        }
+    }
+}
+
+
+
+main{
+    // height: calc();
+    @at-root header.--fix+main{
+        padding-top: 56px;
+    }
+}
+
+
+
+footer{
+
+
+    .webMap{
+        @include d_f(flex, 0, center);
+        padding: 56px 16px;
+
+        ul {
+            position: relative;
+            max-width: 360px;
+            padding: 0 64px 0 94px;
+            color: map-get($txt_color, secondary);
+
+            &::before{
+                @include pos_a(tl,0);
+                content: '';
+                width: 30px;
+                height: 30px;
+
             }
 
-            .order {
-                grid-area: order;
+            &+ul{
+                border-left: 1px solid map-get($bg_color, lightgray);
+            }
 
-                @include mw_sm {
-                    grid-area: 2 / 1 / 3 / 2;
-
-                    // 選擇桌次展開
-                    @at-root .--tableOpen .order {
-                        grid-area: auto;
-                    }
+            li{
+                &:first-child {
+                    color: map-get($txt_color, primary);
+                    font-family: 'Raleway', sans-serif;
+                    font-size: 24px;
+                    margin-bottom: 16px;
                 }
             }
 
-            .road {
-                grid-area: road;
-                
-                z-index: 1;
-
-                @include mw_sm {
-                    min-height: 130px;
-                }
-            }
-
-            .detail {
-                grid-area: details;
-
-                z-index: 3;
-
-                @include mw_sm {
-                    grid-area: 1 / 1 / 2 / 2;
-                }
-            }
-
-
-
-
-            .result{
-                @include d_f(flex, center, center);
-                grid-area: road;
-
-                background: map-get($bg_color, black_alpha);
-                z-index: 2;
+            i{
+                width: 15px;
+                height: 15px;
+                margin-right: 8px;
             }
         }
 
-        // 多桌 .frame__main__multi
-        &__multi{
-            grid-area: inside;
+        // .webMap__links
+        &__links{
 
-            display: grid;
-            grid-template-rows: 410px minmax(200px, 1fr);
-            grid-template-columns: 550px minmax(0, 1fr);
-            grid-template-areas:"video bet"
-                                "select bet";
-
-            .video{
-                grid-area: video;
-            }
-            .selectTB{
-                grid-area: select;
-            }
-            .betArea {
-                grid-area: bet;
-            }
-        }
-
-        // 其他頁面 .frame__main__otherinside
-        &__otherinside {
-            grid-area: inside;
-
-            @include mw_md {
-                @include scrollbar(hidden, auto);
-            }
         }
     }
-}
 
-
-
-// 彈出iframe控制
-.alertBox,
-.plugBox {
-    @include pos_a(trbl, 0);
-    margin: auto;
-    z-index: 10;
-
-    iframe {
-        width: 100%;
-        height: 100%;
+    .copyright{
+        padding: 20px 32px;
+        background: map-get($bg_color, secondary);
+        font-family: 'Raleway', sans-serif;
+        font-size: 14px;
+        text-align: center;
     }
 }
-.plugBox {
-    z-index: 4;
-
-    // 彈出功能頁面如需要像.frame__main功能時用.plugBox__main
-    &__main {
-        width: 100%;
-        height: 100%;
-        padding-left: 130px;
-        background: map-get($bg_color, black_lightalpha);
-
-        @include mw_lg {
-            padding-left: 80px;
-        }
-
-        @include mw_md {
-            padding-left: 0;
-        }
-    }
-}
-
-
-// 大loading遮罩
-.loadingBg {
-    @include load_set;
-    @include pos_a(trbl, 0);
-    background: map-get($bg_color, black_alpha);
-    margin: auto;
-    z-index: 10;
-}
-
-
-
-// 主要區塊配置===========
-// 外層高度控制
-.frame {
-    height: 790px;
-
-    @include mw_lg {
-        height: 100%;
-    }
-
-    @include mw_lowhigh {
-        height: 765px;
-    }
-}
-
-// 視訊放大
-.frame.--bigTv {
-    height: 850px;
-
-    @include mw_lowhigh {
-        height: 765px;
-    }
-}
-
-.--bigTv .frame__main__inside {
-    grid-template-rows: 550px 20px 200px 30px;
-    grid-template-columns: minmax(0, 1fr);
-    grid-template-areas:"video"
-                        "table"
-                        "order"
-                        "road";
-    @include mw_lowhigh {
-        grid-template-rows: 470px 20px 190px 25px;
-    }
-}
-
-// 內層配置
-.--bigTv .detail,
-.--bigTv .result{
-    display: none;
-}
-
-
