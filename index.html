@@ -17,17 +17,17 @@
 
     <!-- 捲軸捲動時加上.--fix -->
     <header>
-        <h1><a href="#/home">HSIN YI</a></h1>
+        <h1 onclick="goRooter('#/home')">HSIN YI</h1>
         <!-- 當前選項加上.--on 點擊打開內容選單 .--active -->
         <ul class="menu">
-            <li><a href="#/about">ABOUT</a></li>
+            <li onclick="goRooter('#/about')">ABOUT</li>
             <li class="--more">
                 SERVICES
                 <ul class="active_item">
-                    <li><a href="#/service/consultancy">Expert Consultancy</a></li>
-                    <li><a href="#/service/project">Project Delivery</a></li>
-                    <li><a href="#/service/critical">Critical Operations</a></li>
-                    <li><a href="#/service/connected">Connected Technologies</a></li>
+                    <li onclick="goRooter('#/service/consultancy')">Expert Consultancy</li>
+                    <li onclick="goRooter('#/service/project')">Project Delivery</li>
+                    <li onclick="goRooter('#/service/critical')">Critical Operations</li>
+                    <li onclick="goRooter('#/service/connected')">Connected Technologies</li>
                 </ul>
             </li>
             <li class="--more">
@@ -38,7 +38,7 @@
                     <li>DNS Protection</li>
                 </ul>
             </li>
-            <li><a href="#/contact">CONTACT</a></li>
+            <li onclick="goRooter('#/contact')">CONTACT</li>
             <li><a href="tel:+65-6996-7685">+65 6996 7685</a></li>
         </ul>
     </header>
@@ -126,5 +126,11 @@
         <!-- copyright end -->
     </footer>
 
+    <script>
+        function goRooter(href){
+            location = href;
+        }
+
+    </script>
 </body>
 </html>

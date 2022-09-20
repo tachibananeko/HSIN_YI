@@ -9,7 +9,7 @@ Router.prototype.route = function(path, callback) {
 };
 Router.prototype.refresh = function() {
     // 路由清單
-    let routerList = ['', 'home','about','service/consultancy','service/project','service/critical','service/connected','product','contact'];
+    let routerList = ['', 'home','about','service/consultancy','service/project','service/critical','service/connected','contact'];
 
     //获取到相应的hash值
     let index = routerList.indexOf(location.hash.slice(2))
