@@ -107,7 +107,8 @@ function mainInclude(src) {
     $.ajax({
         url: src,
         success: function(html) {  
-            $("#content").html(html);       
+            $("#content").html(html);   
+            window.scrollTo({ top: 0 });    
         },
         // 發送前
         beforeSend: function() {},
