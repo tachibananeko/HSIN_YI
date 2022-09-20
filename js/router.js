@@ -39,44 +39,67 @@ window.Router.init();
 // 路由呼叫路徑
 Router.route('/home', function() {
     mainInclude('tpl/home.html');
+    $('#topMenu li').removeClass('--on');
 });
 Router.route('/about', function() {
     mainInclude('tpl/about.html');
+    $('#topMenu li').removeClass('--on');
+    $('#toAbout').addClass('--on');
 });
 
 
 Router.route('/service/consultancy', function() {
     mainInclude('tpl/consultancy.html');
+    chServiceMenu(0);
 });
 Router.route('/service/project', function() {
     mainInclude('tpl/project.html');
+    chServiceMenu(1);
 });
 Router.route('/service/critical', function() {
     mainInclude('tpl/critical.html');
+    chServiceMenu(2);
 });
 Router.route('/service/connected', function() {
     mainInclude('tpl/connected.html');
+    chServiceMenu(3);
 });
+function chServiceMenu(num){
+    $('#topMenu li').removeClass('--on');
+    $('#toService').addClass('--on');
+    $(`#toService li:eq(${num})`).addClass('--on');
+}
 
 
 Router.route('/protection/application', function() {
     mainInclude('tpl/application.html');
+    chProtectionMenu(0);
 });
 Router.route('/protection/origin', function() {
     mainInclude('tpl/origin.html');
+    chProtectionMenu(1);
 });
 Router.route('/protection/dns', function() {
     mainInclude('tpl/dns.html');
+    chProtectionMenu(2);
 });
+function chProtectionMenu(num){
+    $('#topMenu li').removeClass('--on');
+    $('#toProtection').addClass('--on');
+    $(`#toProtection li:eq(${num})`).addClass('--on');
+}
 
 
 
 Router.route('/contact', function() {
     mainInclude('tpl/contact.html');
+    $('#topMenu li').removeClass('--on');
+    $('#toContact').addClass('--on');
 });
 
 Router.route('/privacy', function() {
     mainInclude('tpl/privacy.html');
+    $('#topMenu li').removeClass('--on');
 });
 
 
@@ -95,4 +118,5 @@ function mainInclude(src) {
         }
     });
 }
+
 
