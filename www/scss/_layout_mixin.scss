@@ -155,31 +155,3 @@ $icon: (
 		url(../images/icon_#{$name}.svg) no-repeat center / contain;
 	}
 }
-
-// 籌碼
-$chips: (
-	'10',
-	'20',
-	'50',
-	'100',
-	'200',
-	'500',
-	'1k',
-	'2k',
-	'5k',
-	'10k',
-	'50k',
-	'100k',
-	'auto01',
-	'auto02',
-	'set',
-	'allin'
-);
-@each $name in $chips {
-	.chips_#{$name} {
-		@extend %hand;
-        @extend %transition;
-		display: inline-block;
-		background:url(../images/chips_#{$name}.png) no-repeat center / contain;
-	}
-}

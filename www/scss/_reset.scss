@@ -94,6 +94,7 @@ textarea {
 	-ms-appearance: none;
 	appearance: none;
 	resize: none;
+	color: map-get($txt_color, black);
 	font-size: 16px;
 }
 

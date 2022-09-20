@@ -1,7 +1,7 @@
 header{
     @include d_f(flex, center, 0);
     height: 64px;
-    padding: 8px 32px;
+    padding: 8px 64px;
     background: map-get($bg_color, secondary);
 
     // head固定
@@ -101,7 +101,6 @@ header{
 
 
 main{
-    // height: calc();
     @at-root header.--fix+main{
         padding-top: 56px;
     }
@@ -109,58 +108,141 @@ main{
 
 
 
-footer{
+// footer
+.mailBox{
+    padding: 56px 16px;
+    
+    // .mailBox__label
+    &__label{
+        @include d_f(flex, 0 ,center);
+        max-width: 480px;
+        margin: auto;
+
+        &::before{
+            content: '';
+            flex: none;
+            width: 150px;
+            height: 45px;
+            background: url(../images/img_logo.png) no-repeat left center / contain;
+            filter: grayscale(1) brightness(3);
+        }
+
+        input{
+            flex: 1 1 100%;
+            padding: 0 16px;
+            background: map-get($bg_color, white);
+            margin-left: 16px;
+        }
+    }
 
 
-    .webMap{
-        @include d_f(flex, 0, center);
-        padding: 56px 16px;
+    // mailBox__label_btn
+    &__label_btn {
+        position: relative;
+        flex: none;
+        width: 80px;
+        background: map-get($bg_color, blue);
+        color: map-get($txt_color, white);
 
-        ul {
+        &::before {
+            @include triangle(15px, map-get($bg_color, white), right);
+            @include pos_a(trbl, 0);
+            content: '';
+            margin: auto;
+        }
+
+        // 手指效果
+        @include hoverHandler {
+            filter: brightness(1.1);
+        }
+    }
+}
+
+.webMap{
+    @include d_f(flex, 0, center);
+    padding: 56px 16px;
+
+    ul {
+        @include d_f(flex, flex-start, 0);//為了讓動畫不要超過
+        flex-direction: column;
+        position: relative;
+        max-width: 400px;
+        padding: 0 56px 0 120px;
+        color: map-get($txt_color, secondary);
+
+        &::before{
+            @include pos_a(tl,0, 56px);
+            content: '';
+            width: 40px;
+            height: 40px;
+        }
+
+        &+ul{
+            border-left: 1px solid map-get($bg_color, lightgray);
+        }
+
+        li{
+            @extend %hand;
             position: relative;
-            max-width: 360px;
-            padding: 0 64px 0 94px;
-            color: map-get($txt_color, secondary);
+            line-height: 24px;
+            font-family: 'Raleway', sans-serif;
 
-            &::before{
-                @include pos_a(tl,0);
+            &+li{
+                margin-bottom: 8px;
+            }
+
+            &:first-child {
+                color: map-get($txt_color, primary);
+                font-size: 24px;
+                margin-bottom: 16px;
+            }
+
+            @at-root ul:not(.webMap__address) li:not(:first-child)::after{
+                @extend %transition;
+                @include pos_a(bl, 0);
                 content: '';
-                width: 30px;
-                height: 30px;
-
+                width: 0;
+                height: 1px;
+                background: map-get($bg_color, lightgray);
             }
 
-            &+ul{
-                border-left: 1px solid map-get($bg_color, lightgray);
-            }
-
-            li{
-                &:first-child {
-                    color: map-get($txt_color, primary);
-                    font-family: 'Raleway', sans-serif;
-                    font-size: 24px;
-                    margin-bottom: 16px;
+            // 手指效果
+            @include hoverHandler {
+                &::after{                        
+                    width: 100%;
                 }
-            }
 
-            i{
-                width: 15px;
-                height: 15px;
-                margin-right: 8px;
+                filter: brightness(2);
             }
         }
 
-        // .webMap__links
-        &__links{
-
+        i{
+            width: 15px;
+            height: 15px;
+            margin-right: 8px;
         }
     }
 
-    .copyright{
-        padding: 20px 32px;
-        background: map-get($bg_color, secondary);
-        font-family: 'Raleway', sans-serif;
-        font-size: 14px;
-        text-align: center;
+    // .webMap__links
+    &__links::before{
+        background: url(../images/icon_links.svg) no-repeat center / contain;
     }
+
+    // .webMap__services
+    &__services::before{
+        background: url(../images/icon_services.svg) no-repeat center / contain;
+    }
+
+    // .webMap__address
+    &__address::before{
+        background: url(../images/icon_address.svg) no-repeat center / contain;
+    }
+}
+
+.copyright{
+    padding: 20px 32px;
+    background: map-get($bg_color, secondary);
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    text-align: center;
 }

@@ -1,0 +1,82 @@
+.slider{
+    @extend %transition;
+    position: relative;
+    overflow: hidden;
+
+    // slider__img
+    &__img{
+        @include d_f(flex, 0, 0);
+        width: 300%;
+
+        li{
+            width: 100%;
+        }
+    }
+
+    // slider__info
+    &__info{
+        @include pos_a(tbl, 0, 0, 56px);
+        @include d_f(flex, 0, center);
+        flex-direction: column;
+        color: map-get($txt_color, secondary);
+        margin: auto;
+
+        h2{
+            letter-spacing: 1.5px;
+            font-size: 40px;
+            margin-bottom: 8px;
+
+            code{
+                display: block;
+                color: map-get($txt_color, white);
+                font-size: 96px;
+                font-weight: bold;
+            }
+        }
+
+        p{
+            line-height: 24px;
+            font-family: 'Raleway', sans-serif;
+            margin-bottom: 16px;
+        }
+
+        .btnG{
+            @include d_f(flex, 0, space-between);
+            max-width: calc(100% / 3 * 2);
+        }
+
+        // .slider__info_btn
+        &_btn{
+            width: 150px;
+            height: 40px;
+            background: map-get($bg_color, blue);
+            border: 1px solid map-get($bg_color, blue);
+            border-radius: 40px;
+            color: map-get($txt_color, white);
+            text-transform: uppercase;
+
+            // 手指效果
+            @include hoverHandler {
+                background: transparent;
+                border-color: map-get($bg_color, white);
+            }
+
+            &.--more{
+                background: transparent;
+                border-color: map-get($bg_color, white);
+
+                // 手指效果
+                @include hoverHandler {
+                    background: map-get($bg_color, blue);
+                    border: 1px solid map-get($bg_color, blue);
+                }
+            }
+        }
+    }
+}
+
+
+
+.services{
+
+}
