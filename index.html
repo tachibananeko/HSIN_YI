@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/router.js?v1.0.5"></script>
+
+    <link rel="stylesheet" href="style/all.min.css">
+    <title>HSIN YI</title> 
+</head>
+
+<body>
+
+    <!-- 捲軸捲動時加上.--fix -->
+    <header>
+        <h1><a href="#/home">HSIN YI</a></h1>
+        <!-- 當前選項加上.--on 點擊打開內容選單 .--active -->
+        <ul class="menu">
+            <li><a href="#/about">ABOUT</a></li>
+            <li class="--more">
+                SERVICES
+                <ul class="active_item">
+                    <li><a href="#/service/consultancy">Expert Consultancy</a></li>
+                    <li><a href="#/service/project">Project Delivery</a></li>
+                    <li><a href="#/service/critical">Critical Operations</a></li>
+                    <li><a href="#/service/connected">Connected Technologies</a></li>
+                </ul>
+            </li>
+            <li class="--more">
+                PRODUCTS
+                <ul class="active_item">
+                    <li>Application Protection</li>
+                    <li>Origin Protection</li>
+                    <li>DNS Protection</li>
+                </ul>
+            </li>
+            <li><a href="#/contact">CONTACT</a></li>
+            <li><a href="tel:+65-6996-7685">+65 6996 7685</a></li>
+        </ul>
+    </header>
+    
+
+    <!-- content -->
+    <main id="content"></main>
+    <!-- content end -->
+
+    <footer>
+        <!-- mail -->
+        <div class="mailBox">
+            <label class="mailBox__label">
+                <input type="text" placeholder="Enter Your Email" autocapitalize="off" autocomplete="off" autocorrect="off">
+                <button class="mailBox__label_btn"></button>
+            </label>
+        </div>
+        <!-- mail end -->
+
+
+
+        <!-- web map -->
+        <div class="webMap">
+            <ul class="webMap__links">
+                <li>
+                    Useful Links
+                </li>
+                <li>
+                    Home
+                </li>
+                <li>
+                    About
+                </li>
+                <li>
+                    Contact
+                </li>
+                <li>
+                    Privacy Policy
+                </li>
+            </ul>
+
+            <ul class="webMap__services">
+                <li>
+                    Services
+                </li>
+                <li>
+                    Expert Consultancy
+                </li>
+                <li>
+                    Project Delivery
+                </li>
+                <li>
+                    Critical Operations
+                </li>
+                <li>
+                    Connected Technologies
+                </li>
+            </ul>
+
+            <ul class="webMap__address">
+                <li>Our Address</li>
+                <li>
+                    8 Eu Tong Sen Street #19-91,92 The Central Singapore 059818
+                </li>
+                <li>
+                    <i class="icon_tel"></i>
+                    <a href="tel:+65-6996-7685">+65 6996 7685</a>
+                </li>
+                <li>
+                    <i class="icon_fax"></i>
+                    <a>+65 6224 2298</a>
+                </li>
+                <li>
+                    <i class="icon_mail"></i>
+                    <a href="mailto:assistant@hsinyi-sg.com">assistant@hsinyi-sg.com</a>
+                </li>
+            </ul>
+        </div>
+        <!-- web map end -->
+
+
+
+        <!-- copyright -->
+        <div class="copyright">© 2016 HSIN YI All Rights Reserved.</div>
+        <!-- copyright end -->
+    </footer>
+
+</body>
+</html>
