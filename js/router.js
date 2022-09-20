@@ -9,7 +9,7 @@ Router.prototype.route = function(path, callback) {
 };
 Router.prototype.refresh = function() {
     // 路由清單
-    let routerList = ['', 'home','about','service/consultancy','service/project','service/critical','service/connected','contact'];
+    let routerList = ['', 'home','about','service/consultancy','service/project','service/critical','service/connected','protection/application','protection/origin','protection/dns','contact','privacy'];
 
     //获取到相应的hash值
     let index = routerList.indexOf(location.hash.slice(2))
@@ -59,17 +59,32 @@ Router.route('/service/connected', function() {
 });
 
 
+Router.route('/protection/application', function() {
+    mainInclude('tpl/application.html');
+});
+Router.route('/protection/origin', function() {
+    mainInclude('tpl/origin.html');
+});
+Router.route('/protection/dns', function() {
+    mainInclude('tpl/dns.html');
+});
+
+
 
 Router.route('/contact', function() {
     mainInclude('tpl/contact.html');
+});
+
+Router.route('/privacy', function() {
+    mainInclude('tpl/privacy.html');
 });
 
 
 function mainInclude(src) {
     $.ajax({
         url: src,
-        success: function(html) {
-            $("#content").html(html);
+        success: function(html) {  
+            $("#content").html(html);       
         },
         // 發送前
         beforeSend: function() {},
