@@ -60,7 +60,7 @@ header{
 
         // 內層選單
         ul{
-            @include pos_a(tl, calc(100% + 16px), 0);
+            @include pos_a(tl, calc(100% + 21px), 0);
             @include d_f(flex, center, 0);
             @include border(1px 0 0, map-get($border_color, primary));
             flex-direction: column;
@@ -142,12 +142,12 @@ main{
     &__label_btn {
         position: relative;
         flex: none;
-        width: 80px;
+        width: 64px;
         background: map-get($bg_color, blue);
         color: map-get($txt_color, white);
 
         &::before {
-            @include triangle(15px, map-get($bg_color, white), right);
+            @include triangle(10px, map-get($bg_color, white), right);
             @include pos_a(trbl, 0);
             content: '';
             margin: auto;
@@ -182,46 +182,47 @@ main{
         &+ul{
             border-left: 1px solid map-get($bg_color, lightgray);
         }
+    }
 
-        li{
-            @extend %hand;
-            position: relative;
-            line-height: 24px;
+    li {
+        @extend %hand;
+        position: relative;
+        line-height: 24px;
 
-            &+li{
-                margin-bottom: 8px;
-            }
-
-            &:first-child {
-                color: map-get($txt_color, primary);
-                font-size: 24px;
-                margin-bottom: 16px;
-            }
-
-            @at-root ul:not(.webMap__address) li:not(:first-child)::after{
-                @extend %transition;
-                @include pos_a(bl, 0);
-                content: '';
-                width: 0;
-                height: 1px;
-                background: map-get($bg_color, lightgray);
-            }
-
-            // 手指效果
-            @include hoverHandler {
-                &::after{                        
-                    width: 100%;
-                }
-
-                filter: brightness(2);
-            }
+        &+li {
+            margin-bottom: 8px;
         }
 
-        i{
-            width: 15px;
-            height: 15px;
-            margin-right: 8px;
+        &:first-child {
+            @extend %no_hand;
+            color: map-get($txt_color, primary);
+            font-size: 24px;
+            margin-bottom: 16px;
         }
+
+        &:not(:first-child)::after {
+            @extend %transition;
+            @include pos_a(bl, 0);
+            content: '';
+            width: 0;
+            height: 1px;
+            background: map-get($bg_color, lightgray);
+        }
+
+        // 手指效果
+        @include hoverHandler {
+            &::after {
+                width: 100%;
+            }
+
+            filter: brightness(2);
+        }
+    }
+
+    i {
+        width: 15px;
+        height: 15px;
+        margin-right: 8px;
     }
 
     // .webMap__links
@@ -235,8 +236,13 @@ main{
     }
 
     // .webMap__address
-    &__address::before{
-        background: url(../images/icon_address.svg) no-repeat center / contain;
+    &__address{
+        li:nth-child(2)::after{
+            content: none !important;
+        }
+        &::before {
+            background: url(../images/icon_address.svg) no-repeat center / contain;
+        }
     }
 }
 

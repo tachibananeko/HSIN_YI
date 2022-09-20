@@ -4,7 +4,7 @@
     @extend %transition;
     opacity: 0;
     visibility: collapse;
-    transform-origin: center top;
+    transform: translate3d(0, -20%, 0);
     z-index: 2;
 }
 
@@ -13,6 +13,7 @@
     ~ .active_item {
         visibility: visible;
         opacity: 1;
+        transform: translate3d(0, 0, 0);
     }
 }
 

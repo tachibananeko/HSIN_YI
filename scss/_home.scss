@@ -165,6 +165,192 @@
 
 
 
+// 關於我們
+.about{
+    padding: 64px 128px 32px;
+
+    // .about__txt
+    &__txt{
+        text-align: center;
+        margin: auto;
+
+        h3{
+            @extend %title;
+            color: map-get($txt_color, primary);
+            margin-bottom: 32px;
+        }
+        p{
+            line-height: 24px;
+            margin-bottom: 32px;
+            text-align: left;
+        }
+
+        &_btn{
+            width: 150px;
+            height: 40px;
+            background: map-get($bg_color, blue);
+            border: 1px solid map-get($bg_color, blue);
+            border-radius: 40px;
+            color: map-get($txt_color, white);
+            text-transform: uppercase;
+        
+            // 手指效果
+            @include hoverHandler {
+                background: transparent;
+                border-color: map-get($bg_color, white);
+            }
+        }
+    }
+
+    // .about__imgBox
+    &__imgBox{
+
+    }
+
+}
+
+
+
+// 產品
+.product{
+    @include d_f(flex, center, space-between);
+    padding: 64px 64px 32px;
+    background: map-get($bg_color, lightgray);
+
+    // product__img
+    &__img{
+        width: calc(60% - 64px);
+    }
+
+    // product__txt
+    &__txt{
+        max-width: 40%;
+        h3 {
+            @extend %title;
+            padding-bottom: 16px;
+            border-bottom: 1px solid map-get($bg_color, darkgray);
+            color: map-get($txt_color, darkgray);
+            font-weight: bold;
+            margin-bottom: 32px;
+        }
+
+        ul{
+            color: map-get($txt_color, secondary);
+        }
+
+        li{
+            line-height: 24px;
+
+            code{
+                display: block;
+                font-size: 18px;
+                font-weight: bold;
+                margin-bottom: 8px;
+            }
+        }
+
+        &_btn{
+            display: block;
+            padding: 8px 16px;
+            background: map-get($bg_color, blue);
+            border: 1px solid map-get($bg_color, blue);
+            border-radius: 40px;
+            color: map-get($txt_color, white);
+            font-size: 12px;
+            text-transform: uppercase;
+            margin-left: auto;
+        
+            // 手指效果
+            @include hoverHandler {
+                background: transparent;
+                border-color: map-get($bg_color, darkgray);
+                color: map-get($txt_color, darkgray);
+            }
+        }
+    }    
+}
+
+
+
+.client{
+    position: relative;
+    padding: 64px 16px 32px;
+
+    // .client__title
+    &__title{
+        @extend %title;
+        margin-bottom: 48px;
+    }
+
+    // .client__control
+    &__control{
+        @include pos_a(trbl, 0);
+        width: 60%;
+        margin: auto;
+        pointer-events: none;
+    }
+
+    // .client__msgBox
+    &__msgBox{
+        @include d_f(flex, 0, 0);
+        width: 40%;
+        margin: auto;
+        overflow: hidden;
+
+        // .client__msgBox__item
+        &__item{
+            flex: none;
+            width: 100%;
+            text-align: center;
+
+            .txt{
+                line-height: 24px;
+                color: map-get($txt_color, secondary);
+                margin-bottom: 48px;
+            }
+
+            .name{
+                position: relative;
+                color: map-get($txt_color, white);
+                font-size: 24px;
+                font-weight: bold;
+                margin-bottom: 8px;
+
+                &::before{
+                    @include pos_a(rbl, 0, calc(100% + 16px), 0);
+                    content: '';
+                    width: 60%;
+                    height: 1px;
+                    background: map-get($bg_color, white);
+                    margin: auto;
+                }
+            }
+
+            .grade{
+                color: map-get($txt_color, secondary);
+                font-size: 12px;
+            }
+        }
+    }
+
+    // .client__total
+    &__total{
+        width: 60px;
+        height: 40px;
+        line-height: 40px;
+        background: map-get($bg_color, lightgray);
+        border-radius: 40px;
+        color: map-get($txt_color, secondary);
+        font-weight: bold;
+        font-size: 20px;
+        margin: auto;
+        text-align: center;
+    }
+}
+
+
+
+// 支援
 .supplier{
     padding: 64px 64px 24px;
     background: #999;
