@@ -5,7 +5,7 @@
     padding-bottom: 40%;
     overflow: hidden;
 
-    // slider__img
+    // .slider__img
     &__img{
         @include d_f(flex, 0, 0);
         @include pos_a(tbl, 0);
@@ -17,7 +17,7 @@
         }
     }
 
-    // slider__info
+    // .slider__info
     &__info{
         @include pos_a(tbl, 0, 0, 56px);
         @include d_f(flex, 0, center);
@@ -25,22 +25,38 @@
         color: map-get($txt_color, secondary);
         margin: auto;
 
+        @include mw_md{
+            left: 32px;
+        }
+
         h2{
             letter-spacing: 1.5px;
             font-size: 40px;
             margin-bottom: 8px;
+
+            @include mw_md {
+                font-size: 24px;
+            }
 
             code{
                 display: block;
                 color: map-get($txt_color, white);
                 font-size: 96px;
                 font-weight: bold;
+
+                @include mw_md{
+                    font-size: 64px;
+                }
             }
         }
 
         p{
             line-height: 24px;
             margin-bottom: 16px;
+
+            @include mw_md {
+                font-size: 14px;
+            }
         }
 
         .btnG{
@@ -57,6 +73,12 @@
             border-radius: 40px;
             color: map-get($txt_color, white);
             text-transform: uppercase;
+
+
+            @include mw_md {
+                width: 120px;
+                font-size: 14px;
+            }
 
             // 手指效果
             @include hoverHandler {
@@ -83,8 +105,14 @@
 // 服務
 .services{
     @extend %transition;
+    position: relative;
     padding: 64px 0 32px;
     background: map-get($bg_color, secondary);
+    overflow: hidden;
+
+    @include mw_md{
+        padding: 32px 0 24px;
+    }
 
     // .services__title
     &__title{
@@ -102,23 +130,37 @@
             flex: none;
             width: 64px;
             height: 0;
+
+            @include mw_md{
+                width: 32px;
+            }
         }
 
         // .services__item__txt
         &__txt{
+            @extend %hand;
             min-width: calc(100% / 3.5 - 64px);
             padding: 16px 24px;
             background: map-get($bg_color, linear);
             border-radius: 5px;
+
+            @include mw_md{
+                min-width: calc(100% / 2.5 - 64px);
+            }
             
             &+li{
                 margin-left: 64px;
             }
 
             img{
+                @extend %transition;
                 display: block;
-                width: 200px;
+                width: 150px;
                 margin: auto auto 24px;
+
+                @include mw_md{
+                    width: 100px;
+                }
             }
 
             h3{
@@ -127,10 +169,26 @@
                 font-weight: bold;
                 margin-bottom: 24px;
                 text-align: center;
+                
+                @include mw_md{
+                    font-size: 20px;
+                }
             }
 
             p{
-                line-height: 24px;
+                line-height: 20px;
+                font-size: 14px;
+
+                @include mw_md{
+                    @include omission(3, 60px);
+                }
+            }
+
+            // 手指效果
+            @include hoverHandler {
+                img{
+                    transform: scale(1.2);
+                }
             }
         }
     }
@@ -216,10 +274,31 @@
     @include d_f(flex, center, space-between);
     padding: 64px 64px 32px;
     background: map-get($bg_color, lightgray);
+    overflow: hidden;
+
+    @include mw_md{
+        padding: 32px 32px 16px;
+    }
 
     // product__img
     &__img{
+        position: relative;
         width: calc(60% - 64px);
+        height: 300px;
+        background: url(../images/img_product_main.png) no-repeat right bottom / contain;
+
+        span{
+            display: block;
+        }
+        .pad{
+            @include pos_a(bl, 0, 50px);
+            width: 60%;
+        }
+
+        .ph {
+            @include pos_a(rbl, 0);
+            width: 20%;
+        }
     }
 
     // product__txt
@@ -232,6 +311,10 @@
             color: map-get($txt_color, darkgray);
             font-weight: bold;
             margin-bottom: 32px;
+
+            @include mw_md{
+                margin-bottom: 16px;
+            }
         }
 
         ul{
@@ -241,11 +324,21 @@
         li{
             line-height: 24px;
 
+            @include mw_md {
+                @include omission(3, 150px);
+                font-size: 12px;
+            }
+
             code{
                 display: block;
                 font-size: 18px;
                 font-weight: bold;
                 margin-bottom: 8px;
+
+                @include mw_md{
+                    font-size: 16px;
+                    margin-bottom: 0;
+                }
             }
         }
 
@@ -272,22 +365,47 @@
 
 
 
+// 客戶回饋
 .client{
     position: relative;
     padding: 64px 16px 32px;
+    background: url(../images/img_client.jpg) no-repeat center / cover;
+
+    @include mw_md{
+        padding: 32px 16px 16px;
+    }
 
     // .client__title
     &__title{
         @extend %title;
-        margin-bottom: 48px;
+        margin-bottom: 32px;
     }
 
     // .client__control
     &__control{
         @include pos_a(trbl, 0);
+        @include d_f(flex, center, space-between);
         width: 60%;
         margin: auto;
         pointer-events: none;
+
+        // .client__control_btn
+        &_btn{
+            @extend %hand;
+            width: 50px;
+            height: 50px;
+            background: url(../images/icon_arrowL.svg) no-repeat center / contain;
+            pointer-events: auto;
+
+            &.--right{
+                background-image: url(../images/icon_arrowR.svg);
+            }
+
+            // 手指效果
+            @include hoverHandler {
+                filter: brightness(2);
+            }
+        }
     }
 
     // .client__msgBox
@@ -302,11 +420,16 @@
             flex: none;
             width: 100%;
             text-align: center;
+            margin-bottom: 32px;
 
             .txt{
                 line-height: 24px;
                 color: map-get($txt_color, secondary);
                 margin-bottom: 48px;
+
+                @include mw_md{
+                    @include omission(4, 100px);
+                }
             }
 
             .name{
@@ -337,11 +460,10 @@
     &__total{
         width: 60px;
         height: 40px;
-        line-height: 40px;
+        line-height: 35px;
         background: map-get($bg_color, lightgray);
         border-radius: 40px;
         color: map-get($txt_color, secondary);
-        font-weight: bold;
         font-size: 20px;
         margin: auto;
         text-align: center;
@@ -355,6 +477,11 @@
     padding: 64px 64px 24px;
     background: #999;
     text-align: center;
+    background: url(../images/img_supplier.jpg) no-repeat center / cover;
+
+    @include mw_md{
+        padding: 16px 32px;
+    }
 
     // .supplier__title
     &__title{
@@ -370,6 +497,11 @@
         line-height: 32px;
         font-size: 24px;
         margin: auto auto 32px;
+
+        @include mw_md{
+            line-height: 24px;
+            font-size: 16px;
+        }
     }
     
     // .supplier__logos
@@ -380,6 +512,10 @@
         li{
             max-width: 8%;
             margin: 0 16px;
+
+            @include mw_md{
+                max-width: 20%;
+            }
         }
     }
     

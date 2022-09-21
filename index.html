@@ -17,7 +17,7 @@
 
 <body>
 
-    <!-- 捲軸捲動時加上.--fix -->
+    <!-- 捲軸捲動時加上.--fix 行動裝置打開menu .--open -->
     <header>
         <h1 id="toHome" data-href="#/home">HSIN YI</h1>
         <!-- 當前選項加上.--on 點擊打開內容選單 .--active -->
@@ -43,6 +43,12 @@
             <li id="toContact" data-href="#/contact">CONTACT</li>
             <li><a href="tel:+65-6996-7685">+65 6996 7685</a></li>
         </ul>
+
+        <div class="ham_btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </header>
     
 
@@ -52,8 +58,8 @@
 
     <footer>
         <!-- mail -->
-        <div class="mailBox" data-aos="zoom-in-down" data-aos-duration="1000" data-aos-anchor-placement="bottom-bottom">
-            <label class="mailBox__label">
+        <div class="mailBox">
+            <label class="mailBox__label" data-aos="zoom-in-down" data-aos-duration="1000" data-aos-anchor-placement="bottom-bottom">
                 <input type="text" placeholder="Enter Your Email" autocapitalize="off" autocomplete="off" autocorrect="off">
                 <button class="mailBox__label_btn"></button>
             </label>
@@ -64,7 +70,7 @@
     
         <!-- web map -->
         <div class="webMap">
-            <ul class="webMap__links" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="600">
+            <ul class="webMap__links" data-aos="fade-down" data-aos-duration="1000" data-aos-anchor-placement="bottom-bottom">
                 <li>
                     Useful Links
                 </li>
