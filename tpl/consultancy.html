@@ -20,25 +20,25 @@
     <div class="content__aside">
         <ul class="content__aside__menu">
             <li>OUR SERVICES</li>
-            <li>Expert Consultancy</li>
-            <li>Project Delivery</li>
-            <li>Critical Operations</li>
-            <li>Connected Technologies</li>
+            <li class="routerHref" data-href="#/service/consultancy">Expert Consultancy</li>
+            <li class="routerHref" data-href="#/service/project">Project Delivery</li>
+            <li class="routerHref" data-href="#/service/critical">Critical Operations</li>
+            <li class="routerHref" data-href="#/service/connected">Connected Technologies</li>
         </ul>
 
 
 
         <ul class="content__aside__menu">
             <li>CYBERSECURITY PLATFORM</li>
-            <li>
+            <li class="routerHref" data-href="#/protection/application">
                 Application Protection
                 <p>Helps to manage cyber attack risks.</p>
             </li>
-            <li>
+            <li class="routerHref" data-href="#/protection/origin">
                 Origin Protection
                 <p>Blocks bad traffic, protects networks and systems.</p>
             </li>
-            <li>
+            <li class="routerHref" data-href="#/protection/dns">
                 DNS Protection
                 <p>Keeps DNS in functional mode.</p>
             </li>
@@ -76,4 +76,9 @@
 
 <script>
     AOS.init();
+
+    $('.routerHref').click(function(){
+        $('#toService,#toProtection').removeClass('--active');
+        location = $(this).attr('data-href');
+    })
 </script>

@@ -13,11 +13,10 @@
     <link rel="stylesheet" href="style/all.min.css">
     <title>HSIN YI</title> 
 </head>
-
 <body>
 
     <!-- 捲軸捲動時加上.--fix 行動裝置打開menu .--open -->
-    <header>
+    <header id="header">
         <h1 class="routerHref" data-href="#/home">HSIN YI</h1>
         <!-- 當前選項加上.--on 點擊打開內容選單 .--active -->
         <ul class="menu" id="topMenu">
@@ -25,25 +24,25 @@
             <li class="--more" id="toService">
                 SERVICES
                 <ul class="active_item">
-                    <li data-href="#/service/consultancy">Expert Consultancy</li>
-                    <li data-href="#/service/project">Project Delivery</li>
-                    <li data-href="#/service/critical">Critical Operations</li>
-                    <li data-href="#/service/connected">Connected Technologies</li>
+                    <li class="routerHref" data-href="#/service/consultancy">Expert Consultancy</li>
+                    <li class="routerHref" data-href="#/service/project">Project Delivery</li>
+                    <li class="routerHref" data-href="#/service/critical">Critical Operations</li>
+                    <li class="routerHref" data-href="#/service/connected">Connected Technologies</li>
                 </ul>
             </li>
             <li class="--more" id="toProtection">
                 PRODUCTS
                 <ul class="active_item">
-                    <li data-href="#/protection/application">Application Protection</li>
-                    <li data-href="#/protection/origin">Origin Protection</li>
-                    <li data-href="#/protection/dns">DNS Protection</li>
+                    <li class="routerHref" data-href="#/protection/application">Application Protection</li>
+                    <li class="routerHref" data-href="#/protection/origin">Origin Protection</li>
+                    <li class="routerHref" data-href="#/protection/dns">DNS Protection</li>
                 </ul>
             </li>
             <li class="routerHref" data-href="#/contact">CONTACT</li>
             <li><a href="tel:+65-6996-7685">+65 6996 7685</a></li>
         </ul>
 
-        <div class="ham_btn">
+        <div class="ham_btn" id="ham_btn">
             <span></span>
             <span></span>
             <span></span>
@@ -150,6 +149,7 @@
             if(subMove){ $(this).toggleClass('--active');}   
         })
         $('.routerHref').click(function(){
+            $('#header').removeClass('--open');
             $('#toService,#toProtection').removeClass('--active');
             location = $(this).attr('data-href');
         })
@@ -160,7 +160,21 @@
         $(document).click(()=>{
             if(subState){ $('#toService,#toProtection').removeClass('--active');}  
         })
-        
+
+        $(document).scroll(function(){
+            let nowTop = $(this).scrollTop();
+            let hdH = $('#header').height();
+            if(nowTop > hdH){
+                $('#header').addClass('--fix');
+            }else{
+                $('#header').removeClass('--fix');
+            }
+        })
+
+        $('#ham_btn').click(()=>{
+            $('#header').toggleClass('--open');
+        })
+    
         AOS.init();
     </script>
 </body>
