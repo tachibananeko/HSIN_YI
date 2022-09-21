@@ -3,6 +3,7 @@ header{
     height: 64px;
     padding: 8px 64px;
     background: map-get($bg_color, secondary);
+    z-index: 9;
 
     @include mw_lg{
         padding: 8px 32px;
@@ -15,7 +16,6 @@ header{
         top: 0;
         left: 0;
         box-shadow: 3px 3px 15px map-get($bg_color, black_alpha);
-        z-index: 9;
     }
 
     h1{
@@ -178,7 +178,7 @@ header{
 main{
     min-height: 100vh;
     @at-root header.--fix+main{
-        padding-top: 56px;
+        padding-top: 64px;
     }
 }
 
