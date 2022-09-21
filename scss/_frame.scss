@@ -251,7 +251,7 @@ main{
     @include d_f(flex, 0, center);
     padding: 56px 32px;
 
-    @include mw_lg {
+    @include mw_md {
         padding: 16px 32px;
         flex-direction: column;
     }
@@ -264,7 +264,7 @@ main{
         padding: 0 56px 0 120px;
         color: map-get($txt_color, secondary);
 
-        @include mw_lg {
+        @include mw_md {
             padding: 0;
             max-width: none;
             align-items: center;
@@ -276,7 +276,7 @@ main{
             width: 40px;
             height: 40px;
 
-            @include mw_lg{
+            @include mw_md{
                 position: static;
                 margin-bottom: 16px;
             }
@@ -285,7 +285,7 @@ main{
         &+ul{
             border-left: 1px solid map-get($bg_color, lightgray);
 
-            @include mw_lg{
+            @include mw_md{
                 border-left: 0;
                 margin-top: 32px;
             }
@@ -297,7 +297,7 @@ main{
         position: relative;
         line-height: 24px;
 
-        @include mw_lg{
+        @include mw_md{
             line-height: 20px;
         }
 
@@ -311,7 +311,7 @@ main{
             font-size: 24px;
             margin-bottom: 16px;
 
-            @include mw_lg{
+            @include mw_md{
                 font-size: 18px;
                 margin-bottom: 8px;
             }
