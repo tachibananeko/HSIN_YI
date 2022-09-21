@@ -15,6 +15,7 @@ header{
         top: 0;
         left: 0;
         box-shadow: 3px 3px 15px map-get($bg_color, black_alpha);
+        z-index: 9;
     }
 
     h1{

@@ -3,7 +3,7 @@
 }
 
 .theme-default .slider__info{
-    z-index: 10;
+    z-index: 5;
 }
 
 .nivoSlider {
@@ -36,24 +36,6 @@
 	overflow:hidden;
 }
 
-/* Direction nav styles (e.g. Next & Prev) */
-.nivo-directionNav a {
-	position:absolute;
-	top:45%;
-	z-index:9;
-	cursor:pointer;
-}
-.nivo-prevNav {
-	left:0px;
-}
-.nivo-nextNav {
-	right:0px;
-}
-
-.nivo-controlNav {
-	text-align:center;
-	padding: 10px 0;
-}
 
 /* ======================= */
 .theme-default{
@@ -69,10 +51,10 @@
 	position: absolute;
 	bottom: 5px;
 	left: 0;
-	z-index: 10;
+	z-index: 5;
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 599px) {
     .theme-default {
         padding-bottom: 70%;
     }
