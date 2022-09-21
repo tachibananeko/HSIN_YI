@@ -163,8 +163,7 @@
 
         $(document).scroll(function(){
             let nowTop = $(this).scrollTop();
-            let hdH = $('#header').height();
-            if(nowTop > hdH){
+            if(nowTop > 0){
                 $('#header').addClass('--fix');
             }else{
                 $('#header').removeClass('--fix');
