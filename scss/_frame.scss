@@ -118,7 +118,7 @@ header{
                     color: map-get($txt_color, blue);
 
                     &::before{
-                        @include pos_a(trb, 0, calc(100% + 8px), 0);
+                        @include pos_a(trb, 0, calc(100% + 4px), 0);
                         content: '';
                         width: 5px;
                         height: 5px;

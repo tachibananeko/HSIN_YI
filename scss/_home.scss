@@ -13,6 +13,10 @@
         @include d_f(flex, 0, 0);
         margin: auto;
 
+        img{
+            object-position: 25%;
+        }
+
         @include mw_xs{
             @include pos_a(tbl, 0);
         }
@@ -31,16 +35,13 @@
         }        
 
         h2{
+            @extend %txtshadow;
             letter-spacing: 1.5px;
             font-size: 40px;
             margin-bottom: 8px;
 
             @include mw_lg {
                 font-size: 24px;
-            }
-
-            @include mw_xs {
-                font-size: 16px;
             }
 
             code{
@@ -52,14 +53,11 @@
                 @include mw_lg{
                     font-size: 64px;
                 }
-
-                @include mw_xs {
-                    font-size: 32px;
-                }
             }
         }
 
         p{
+            @extend %txtshadow;
             line-height: 24px;
             margin-bottom: 16px;
 
@@ -97,10 +95,6 @@
                 font-size: 14px;
             }
 
-            @include mw_xs{
-                width: 100px;
-            }
-
             // 手指效果
             @include hoverHandler {
                 background: transparent;
@@ -119,6 +113,8 @@
             }
         }
     }
+
+        // banner__title
 }
 
 
@@ -651,4 +647,104 @@
         }
     }
     
+}
+
+
+
+
+// 文字內容
+.content{
+    min-height: 50vh;
+    padding: 32px 64px;
+    background: map-get($bg_color, white);
+    color: map-get($txt_color, secondary);
+    font-size: 16px;
+
+    @include mw_lg{
+        padding: 32px;
+    }
+    
+    &.--half{
+        @include d_f(flex, 0, space-between);
+    }
+
+    // content__title
+    &__title{
+        color: map-get($txt_color, darkgray);
+        font-size: 32px;
+        margin-bottom: 32px;
+    }
+
+    // .content__aside
+    &__aside{
+        width: 25%;
+        padding-left: 50px;
+
+        @include mw_sm{
+            display: none;
+        }
+
+        // .content__aside__menu
+        &__menu{
+            position: relative;
+            margin-bottom: 64px;
+
+            &::before {
+                @include pos_a(tr, 0, calc(100% + 16px));
+                content: '';
+                display: block;
+                width: 30px;
+                height: 30px;
+                background: url(../images/icon_list.svg) no-repeat;
+                filter: brightness(1.5);
+            }
+            li{
+                line-height: 24px;
+                margin-bottom: 16px;
+
+                p{
+                    color: map-get($txt_color, darkgray);
+                    font-size: 12px;
+                }
+            }
+            li:first-child{
+                color: map-get($txt_color, darkgray);
+                font-size: 18px;
+                font-weight: bold;
+            }
+
+            li:not(:first-child){
+                @extend %hand;
+                padding-bottom: 8px;
+                border-bottom: 1px solid map-get($bg_color, gray);
+
+                // 手指效果
+                @include hoverHandler {
+                    color: map-get($txt_color, darkgray);
+                }
+            }
+        }
+    }
+    
+    // .content__txt
+    &__txt{
+        line-height: 24px;
+        @at-root .--half .content__txt{
+            width: calc(75% - 64px);
+
+            @include mw_sm{
+                width: 100%;
+            }
+        }
+        li{
+            margin-bottom: 24px;
+        }
+        // .content__txt__title
+        &__title {
+            color: map-get($txt_color, darkgray);
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 8px!important;
+        }
+    }
 }

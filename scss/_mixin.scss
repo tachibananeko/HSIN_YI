@@ -1,7 +1,7 @@
 
 // 常用設定
 %txtshadow{
-	text-shadow: 2px 2px map-get($txt_color, shadow);
+	text-shadow: 0 0 10px map-get($txt_color, shadow);
 }
 // 動畫
 %transition {
