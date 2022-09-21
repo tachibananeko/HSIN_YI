@@ -9,6 +9,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="js/router.js?v1.0.5"></script>
     <script src="js/carousel.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="style/all.min.css">
     <title>HSIN YI</title> 
 </head>
@@ -50,19 +52,19 @@
 
     <footer>
         <!-- mail -->
-        <div class="mailBox">
+        <div class="mailBox" data-aos="zoom-in-down" data-aos-duration="1000" data-aos-anchor-placement="bottom-bottom">
             <label class="mailBox__label">
                 <input type="text" placeholder="Enter Your Email" autocapitalize="off" autocomplete="off" autocorrect="off">
                 <button class="mailBox__label_btn"></button>
             </label>
         </div>
         <!-- mail end -->
-
-
-
+    
+    
+    
         <!-- web map -->
         <div class="webMap">
-            <ul class="webMap__links">
+            <ul class="webMap__links" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="600">
                 <li>
                     Useful Links
                 </li>
@@ -79,8 +81,8 @@
                     Privacy Policy
                 </li>
             </ul>
-
-            <ul class="webMap__services" id="toService_ft">
+    
+            <ul class="webMap__services" id="toService_ft" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
                 <li>
                     Services
                 </li>
@@ -97,8 +99,8 @@
                     Connected Technologies
                 </li>
             </ul>
-
-            <ul class="webMap__address">
+    
+            <ul class="webMap__address" class="webMap__services" id="toService_ft" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="800">
                 <li>Our Address</li>
                 <li>
                     8 Eu Tong Sen Street #19-91,92 The Central Singapore 059818
@@ -118,9 +120,9 @@
             </ul>
         </div>
         <!-- web map end -->
-
-
-
+    
+    
+    
         <!-- copyright -->
         <div class="copyright">© 2016 HSIN YI All Rights Reserved.</div>
         <!-- copyright end -->
@@ -152,8 +154,8 @@
         $(document).click(()=>{
             if(subState){ $('#toService,#toProtection').removeClass('--active');}  
         })
- 
-          
+        
+        AOS.init();
     </script>
 </body>
 </html>

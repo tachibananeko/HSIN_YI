@@ -103,6 +103,7 @@ header{
 
 
 main{
+    min-height: 1000px;
     @at-root header.--fix+main{
         padding-top: 56px;
     }
