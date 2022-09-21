@@ -8,7 +8,6 @@
     <meta name="format-detection" content="telephone=no" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="js/router.js?v1.0.5"></script>
-    <script src="js/carousel.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="style/all.min.css">
@@ -19,10 +18,10 @@
 
     <!-- 捲軸捲動時加上.--fix 行動裝置打開menu .--open -->
     <header>
-        <h1 id="toHome" data-href="#/home">HSIN YI</h1>
+        <h1 class="routerHref" data-href="#/home">HSIN YI</h1>
         <!-- 當前選項加上.--on 點擊打開內容選單 .--active -->
         <ul class="menu" id="topMenu">
-            <li id="toAbout" data-href="#/about">ABOUT</li>
+            <li class="routerHref" data-href="#/about">ABOUT</li>
             <li class="--more" id="toService">
                 SERVICES
                 <ul class="active_item">
@@ -40,7 +39,7 @@
                     <li data-href="#/protection/dns">DNS Protection</li>
                 </ul>
             </li>
-            <li id="toContact" data-href="#/contact">CONTACT</li>
+            <li class="routerHref" data-href="#/contact">CONTACT</li>
             <li><a href="tel:+65-6996-7685">+65 6996 7685</a></li>
         </ul>
 
@@ -52,6 +51,7 @@
     </header>
     
 
+    
     <!-- content -->
     <main id="content"></main>
     <!-- content end -->
@@ -74,39 +74,39 @@
                 <li>
                     Useful Links
                 </li>
-                <li id="toHome_ft" data-href="#/home">
+                <li class="routerHref" data-href="#/home">
                     Home
                 </li>
-                <li id="toAbout_ft" data-href="#/about">
+                <li class="routerHref" data-href="#/about">
                     About
                 </li>
-                <li id="toContact_ft" data-href="#/contact">
+                <li class="routerHref" data-href="#/contact">
                     Contact
                 </li>
-                <li id="toPrivacy_ft" data-href="#/privacy">
+                <li class="routerHref" data-href="#/privacy">
                     Privacy Policy
                 </li>
             </ul>
     
-            <ul class="webMap__services" id="toService_ft" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
+            <ul class="webMap__services" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
                 <li>
                     Services
                 </li>
-                <li data-href="#/service/consultancy">
+                <li class="routerHref" data-href="#/service/consultancy">
                     Expert Consultancy
                 </li>
-                <li data-href="#/service/project">
+                <li class="routerHref" data-href="#/service/project">
                     Project Delivery
                 </li>
-                <li data-href="#/service/critical">
+                <li class="routerHref" data-href="#/service/critical">
                     Critical Operations
                 </li>
-                <li data-href="#/service/connected">
+                <li class="routerHref" data-href="#/service/connected">
                     Connected Technologies
                 </li>
             </ul>
     
-            <ul class="webMap__address" class="webMap__services" id="toService_ft" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="800">
+            <ul class="webMap__address" class="webMap__services" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="800">
                 <li>Our Address</li>
                 <li>
                     8 Eu Tong Sen Street #19-91,92 The Central Singapore 059818
@@ -149,7 +149,7 @@
             $('#toService').removeClass('--active');
             if(subMove){ $(this).toggleClass('--active');}   
         })
-        $('#toHome,#toAbout,#toContact,#toService li,#toProtection li,#toService_ft li,#toHome_ft,#toAbout_ft,#toContact_ft,#toPrivacy_ft').click(function(){
+        $('.routerHref').click(function(){
             $('#toService,#toProtection').removeClass('--active');
             location = $(this).attr('data-href');
         })
