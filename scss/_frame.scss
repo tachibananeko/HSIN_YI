@@ -4,7 +4,7 @@ header{
     padding: 8px 64px;
     background: map-get($bg_color, secondary);
 
-    @include mw_md{
+    @include mw_lg{
         padding: 8px 32px;
     }
 
@@ -35,7 +35,7 @@ header{
         margin-left: auto;
         color: map-get($txt_color, white);
         
-        @include mw_md{
+        @include mw_lg{
             position: fixed;
             top: 64px;
             left: 0;
@@ -59,7 +59,7 @@ header{
             font-family: 'Roboto', sans-serif;
             font-weight: 700;
 
-            @include mw_md{
+            @include mw_lg{
                 @include border(1px 0 0, map-get($border_color, primary));
                 padding: 16px 0;
                 text-align: center;
@@ -100,7 +100,7 @@ header{
             font-size: 14px;
             text-align: center;
 
-            @include mw_md{
+            @include mw_lg{
                 position: static;
                 border: none;
                 background: transparent;
@@ -146,7 +146,7 @@ header{
         height: 64px;
         margin-left: auto;
 
-        @include mw_md{
+        @include mw_lg{
             display: flex;
         }
 
@@ -188,7 +188,7 @@ main{
     padding: 56px 16px;
     background: url(../images/img_mail.jpg) no-repeat center / cover;    
     
-    @include mw_md{
+    @include mw_lg{
         padding: 32px 16px;
     }
 
@@ -196,22 +196,27 @@ main{
     &__label{
         @include d_f(flex, 0 ,center);
         max-width: 480px;
+        height: 45px;
         margin: auto;
 
         &::before{
             content: '';
             flex: none;
             width: 150px;
-            height: 45px;
+            height: 100%;
             background: url(../images/img_logo.png) no-repeat left center / contain;
             filter: grayscale(1) brightness(3);
+            margin-right: 16px;
+
+            @include mw_xs{
+                content: none;
+            }
         }
 
         input{
             flex: 1 1 100%;
             padding: 0 16px;
             background: map-get($bg_color, white);
-            margin-left: 16px;
         }
     }
 
@@ -240,10 +245,10 @@ main{
 
 .webMap{
     @include d_f(flex, 0, center);
-    padding: 56px 0;
+    padding: 56px 32px;
 
-    @include mw_md {
-        padding: 16px 0;
+    @include mw_lg {
+        padding: 16px 32px;
         flex-direction: column;
     }
 
@@ -255,19 +260,19 @@ main{
         padding: 0 56px 0 120px;
         color: map-get($txt_color, secondary);
 
-        @include mw_md {
+        @include mw_lg {
             padding: 0;
             max-width: none;
             align-items: center;
         }
 
         &::before{
-            @include pos_a(tl,0, 56px);
+            @include pos_a(tl,0 , 56px);
             content: '';
             width: 40px;
             height: 40px;
 
-            @include mw_md{
+            @include mw_lg{
                 position: static;
                 margin-bottom: 16px;
             }
@@ -276,7 +281,7 @@ main{
         &+ul{
             border-left: 1px solid map-get($bg_color, lightgray);
 
-            @include mw_md{
+            @include mw_lg{
                 border-left: 0;
                 margin-top: 32px;
             }
@@ -288,6 +293,10 @@ main{
         position: relative;
         line-height: 24px;
 
+        @include mw_lg{
+            line-height: 20px;
+        }
+
         &+li {
             margin-bottom: 8px;
         }
@@ -297,6 +306,11 @@ main{
             color: map-get($txt_color, primary);
             font-size: 24px;
             margin-bottom: 16px;
+
+            @include mw_lg{
+                font-size: 18px;
+                margin-bottom: 8px;
+            }
         }
 
         &:not(:first-child)::after {
