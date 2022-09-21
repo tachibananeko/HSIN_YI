@@ -4,6 +4,10 @@
     position: relative;
     overflow: hidden;
 
+    @include mw_xs {
+        padding-bottom: 70%;
+    }
+
     // .slider__img
     &__img{
         @include d_f(flex, 0, 0);
@@ -655,7 +659,7 @@
 
 // 文字內容
 .content{
-    min-height: 50vh;
+    min-height: 60vh;
     padding: 32px 64px;
     background: map-get($bg_color, white);
     color: map-get($txt_color, secondary);

@@ -1,9 +1,11 @@
 header{
+    @extend %transition;
     @include d_f(flex, center, 0);
     position: relative;
     height: 64px;
     padding: 8px 64px;
     background: map-get($bg_color, secondary);
+    box-shadow: 0 0 0 transparent;
     z-index: 9;
 
     @include mw_lg{
@@ -177,7 +179,7 @@ header{
 
 
 main{
-    min-height: 100vh;
+    min-height: 50vh;
     @at-root header.--fix+main{
         padding-top: 64px;
     }
