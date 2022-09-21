@@ -4,10 +4,6 @@
     position: relative;
     overflow: hidden;
 
-    @include mw_xs{
-        padding-bottom: 70%;
-    }
-
     // .slider__img
     &__img{
         @include d_f(flex, 0, 0);
@@ -75,7 +71,7 @@
             max-width: calc(100% / 3 * 2);
 
             @include mw_xs{
-                max-width: none;
+                max-width: 80%;
             }
         }
 

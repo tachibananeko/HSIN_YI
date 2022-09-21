@@ -1,0 +1,92 @@
+.theme-default img{
+    max-width: unset;
+}
+
+.theme-default .slider__info{
+    z-index: 10;
+}
+
+.nivoSlider {
+	width:100%;
+	position:relative;
+	overflow: hidden;
+}
+.nivoSlider img {
+	position:absolute;
+	top:0px;
+	left:0px;
+}
+.nivoSlider .nivo-main-image {
+	width: 100% ;
+	position: relative; 
+}
+
+/* The slices and boxes in the Slider */
+.nivo-slice {
+	display:block;
+	position:absolute;
+	z-index:2;
+	height:100%;
+	top:0;
+}
+.nivo-box {
+	display:block;
+	position:absolute;
+	z-index:2;
+	overflow:hidden;
+}
+
+/* Direction nav styles (e.g. Next & Prev) */
+.nivo-directionNav a {
+	position:absolute;
+	top:45%;
+	z-index:9;
+	cursor:pointer;
+}
+.nivo-prevNav {
+	left:0px;
+}
+.nivo-nextNav {
+	right:0px;
+}
+
+.nivo-controlNav {
+	text-align:center;
+	padding: 10px 0;
+}
+
+/* ======================= */
+.theme-default{
+	height: 0;
+	padding-bottom: 47%;
+	position: relative;
+	overflow: hidden;
+}
+
+.theme-default .nivo-controlNav{
+	width: 100%;
+	padding: 0;
+	position: absolute;
+	bottom: 5px;
+	left: 0;
+	z-index: 10;
+}
+
+@media screen and (max-width: 650px) {
+    .theme-default {
+        padding-bottom: 70%;
+    }
+
+    .nivoSlider {
+        height: 100% !important;
+        position: absolute;
+    }
+
+    .nivo-box,
+    .nivo-box img,
+    .nivo-slice,
+    .nivo-slice img,
+    .nivo-main-image {
+        height: 100% !important;
+    }
+}
