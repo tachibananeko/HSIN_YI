@@ -42,6 +42,10 @@
     }
 }
 
+.txt_bold{
+    font-weight: bold;
+}
+
 .show_sm {
     @include mw_md {
         display: none;

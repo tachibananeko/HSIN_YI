@@ -35,7 +35,7 @@ header{
         margin-left: auto;
         color: map-get($txt_color, white);
         
-        @include mw_lg{
+        @include mw_md{
             position: fixed;
             top: 64px;
             left: 0;
@@ -59,7 +59,7 @@ header{
             font-family: 'Roboto', sans-serif;
             font-weight: 700;
 
-            @include mw_lg{
+            @include mw_md{
                 @include border(1px 0 0, map-get($border_color, primary));
                 padding: 16px 0;
                 text-align: center;
@@ -100,7 +100,7 @@ header{
             font-size: 14px;
             text-align: center;
 
-            @include mw_lg{
+            @include mw_md{
                 position: static;
                 border: none;
                 background: transparent;
@@ -146,7 +146,7 @@ header{
         height: 64px;
         margin-left: auto;
 
-        @include mw_lg{
+        @include mw_md{
             display: flex;
         }
 
