@@ -1,5 +1,6 @@
 header{
     @include d_f(flex, center, 0);
+    position: relative;
     height: 64px;
     padding: 8px 64px;
     background: map-get($bg_color, secondary);
