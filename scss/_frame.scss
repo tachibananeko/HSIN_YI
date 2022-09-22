@@ -6,7 +6,7 @@ header{
     padding: 8px 64px;
     background: map-get($bg_color, secondary);
     box-shadow: 0 0 0 transparent;
-    z-index: 9;
+    z-index: 10;
 
     @include mw_lg{
         padding: 8px 32px;
@@ -367,4 +367,12 @@ main{
     background: map-get($bg_color, secondary);
     font-size: 14px;
     text-align: center;
+}
+
+.load{
+    @include pos_a(trbl, 0);
+    position: fixed;    
+    background: url(../images/img_load.gif) no-repeat center / 250px map-get($bg_color, white);
+    filter: brightness(0.8);
+    z-index: 9;
 }

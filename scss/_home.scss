@@ -781,7 +781,7 @@
             width: 40%;
         }
 
-        @include mw_xs {
+        @include mw_sm {
             display: none;
         }
 
@@ -834,7 +834,7 @@
             padding: 32px;
         }
 
-        @include mw_xs {
+        @include mw_sm {
             width: 100%;
         }
 
@@ -870,7 +870,7 @@
             text-transform: uppercase;
             margin-left: auto;
 
-            @include mw_xs{
+            @include mw_sm{
                 width: 100%;
             }
 
