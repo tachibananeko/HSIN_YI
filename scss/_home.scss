@@ -44,7 +44,7 @@
                 font-size: 24px;
             }
 
-            @include mw_lg {
+            @include mw_xs {
             font-size: 20px;
             }
 
@@ -58,7 +58,7 @@
                     font-size: 64px;
                 }
 
-                @include mw_lg {
+                @include mw_xs {
                     font-size: 32px;
                 }
             }
