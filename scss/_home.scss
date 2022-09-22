@@ -693,11 +693,16 @@
         @include d_f(flex, 0, space-between);
     }
 
-    // content__title
+    // .content__title
     &__title{
         color: map-get($txt_color, darkgray);
         font-size: 32px;
         font-weight: bold;
+        margin-bottom: 32px;
+    }
+
+    // .content__img
+    &__img{
         margin-bottom: 32px;
     }
 
