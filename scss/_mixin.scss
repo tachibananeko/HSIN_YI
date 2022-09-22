@@ -243,11 +243,11 @@ $breakpoints: (
 	@media (pointer: fine) and (max-resolution: 2dppx),
 	screen and (pointer: fine) and (-webkit-max-device-pixel-ratio: 2),
 	(-moz-touch-enabled: 0) {
-		&:hover {
+		&:not(.--err):hover {
 			@content;
 		}
 	}
-	&:active {
+	&:not(.--err):active {
 		@content;
 	}
 

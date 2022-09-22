@@ -42,8 +42,46 @@
     }
 }
 
+// 常用元件
 .txt_bold{
     font-weight: bold;
+}
+
+.normal_input {
+    width: 100%;
+    height: 40px;
+    padding: 0 16px;
+    border-bottom: 1px solid map-get($bg_color, gray);
+    
+    &.--err{
+        border-color: map-get($txt_color, red);
+    }
+
+    // 手指效果
+    @include hoverHandler {
+        border-color: map-get($bg_color, blue);
+    }
+}
+.normal_input+.notice:empty{
+    display: none;
+}
+.normal_input.--err+.notice{
+    display: block;
+    padding: 4px 16px 0;
+    color: map-get($txt_color, red);
+}
+
+.normal_textarea{
+    width: 100%;
+    height: 200px;
+    padding: 16px;
+    border: 1px solid map-get($txt_color, gray);
+    margin-bottom: 32px;
+
+    // 手指效果
+    @include hoverHandler {
+        border-color: map-get($bg_color, blue);
+    }
 }
 
 .show_sm {
