@@ -44,6 +44,10 @@
                 font-size: 24px;
             }
 
+            @include mw_lg {
+            font-size: 20px;
+            }
+
             code{
                 display: block;
                 color: map-get($txt_color, white);
@@ -52,6 +56,10 @@
 
                 @include mw_lg{
                     font-size: 64px;
+                }
+
+                @include mw_lg {
+                    font-size: 32px;
                 }
             }
         }
@@ -75,7 +83,7 @@
             max-width: calc(100% / 3 * 2);
 
             @include mw_xs{
-                max-width: 80%;
+                max-width: none;
             }
         }
 
@@ -141,10 +149,16 @@
         }
     }
 
+    .scrollSlider_area{
+        width: 100%;
+        overflow: hidden;
+    }
+
     // .services__item
     &__item{
+        @extend %transition;
         @include d_f(flex, 0, space-between);
-        overflow: hidden;
+        width: calc(114% + 64px);
 
         &::before{
             content: '';
@@ -160,17 +174,17 @@
         // .services__item__txt
         &__txt{
             @extend %hand;
-            min-width: calc(100% / 3.5 - 64px);
+            width: calc(100% / 3.5 - 64px);
             padding: 16px 24px;
             background: map-get($bg_color, linear);
             border-radius: 5px;
 
-            @include mw_lg{
-                min-width: calc(100% / 2.5 - 64px);
+            @include mw_md{
+                min-width: calc(100% / 3 - 64px);
             }
 
             @include mw_xs{
-                min-width: calc(100% / 1.5 - 64px);
+                min-width: calc(100% / 2 - 64px);
             }
             
             &+li{
@@ -524,21 +538,27 @@
         }
     }
 
-    // .client__msgBox
-    &__msgBox{
-        @include d_f(flex, 0, 0);
+    .scrollSlider_area{
         width: 40%;
-        margin: auto;
         overflow: hidden;
+        margin: auto;
 
-        @include mw_xs{
+
+        @include mw_xs {
             width: calc(100% - 32px);
         }
+    }
+
+    // .client__msgBox
+    &__msgBox{
+        @extend %transition;
+        @include d_f(flex, 0, 0);
+        width: 300%;
 
         // .client__msgBox__item
         &__item{
             flex: none;
-            width: 100%;
+            width: calc(100% / 3);
             text-align: center;
             margin-bottom: 32px;
 

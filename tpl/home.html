@@ -117,38 +117,44 @@
 
     <div class="services__title">OUR SUITE OF SERVICES</div>
 
-    <ul class="services__item">
-        <li class="services__item__txt routerHref" data-aos="fade-up" data-aos-duration="800" data-aos-once="true" data-aos-offset="300" data-href="#/service/consultancy">
-            <img src="images/img_consultancy.png">
-            <h3>CONSULTANCY</h3>
-            <p>We provide strategic advice to your complex technology. And help safeguard your work. Our consultancy
-                services also offer design and pre-construction services and full audits of your technical estates.</p>
-        </li>
-        <li class="services__item__txt routerHref" data-aos="fade-up" data-aos-duration="800" data-aos-delay="600" data-aos-once="true" data-href="#/service/project">
-            <img src="images/img_project.png">
-            <h3>PROJECT DELIVERY</h3>
-            <p>No work is useful, if it’s not done in a stipulated time and we master in giving it you when promised.
-                And while doing it, we never compromise on the products quality, also when faced by tight budgets and
-                deadlines. You can count on us for
-                the delivery of your project.</p>
-        </li>
-        <li class="services__item__txt routerHref" data-aos="fade-up" data-aos-duration="800" data-aos-delay="900" data-aos-once="true" data-href="#/service/critical">
-            <img src="images/img_critical.png">
-            <h3>CRITICAL OPERATIONS</h3>
-            <p>With over hundreds of contracts to our name worldwide, you can trust us to maintain, operate and manage
-                ultra-complex critical environments. From bespoke solutions to overseeing client teams, we keep your
-                infrastructure operating effectively
-                to deliver maximum uptime.</p>
-        </li>
-        <li class="services__item__txt routerHref" data-aos="fade-up" data-aos-duration="800" data-aos-delay="1200" data-aos-once="true" data-href="#/service/connected">
-            <img src="images/img_connected.png">
-            <h3>CONNECTED TECHNOLOGIES</h3>
-            <p>Our services are up to date and support all infrastructures. And our deep knowledge helps you win over
-                every problem there is to solve effectively. Working to understand your requirements, our consultants
-                deliver connected solutions to all
-                your technology questions.</p>
-        </li>
-    </ul>
+    <!-- 
+        pc左右移動加上transform: translate3d(-20%, 0, 0); 
+        ph左右移動加上transform: translate3d(-30%, 0, 0); 
+    -->
+    <div class="scrollSlider_area">
+        <ul class="services__item">
+            <li class="services__item__txt routerHref" data-aos="fade-up" data-aos-duration="800" data-aos-once="true" data-aos-offset="300" data-href="#/service/consultancy">
+                <img src="images/img_consultancy.png">
+                <h3>CONSULTANCY</h3>
+                <p>We provide strategic advice to your complex technology. And help safeguard your work. Our consultancy
+                    services also offer design and pre-construction services and full audits of your technical estates.</p>
+            </li>
+            <li class="services__item__txt routerHref" data-aos="fade-up" data-aos-duration="800" data-aos-delay="600" data-aos-once="true" data-href="#/service/project">
+                <img src="images/img_project.png">
+                <h3>PROJECT DELIVERY</h3>
+                <p>No work is useful, if it’s not done in a stipulated time and we master in giving it you when promised.
+                    And while doing it, we never compromise on the products quality, also when faced by tight budgets and
+                    deadlines. You can count on us for
+                    the delivery of your project.</p>
+            </li>
+            <li class="services__item__txt routerHref" data-aos="fade-up" data-aos-duration="800" data-aos-delay="900" data-aos-once="true" data-href="#/service/critical">
+                <img src="images/img_critical.png">
+                <h3>CRITICAL OPERATIONS</h3>
+                <p>With over hundreds of contracts to our name worldwide, you can trust us to maintain, operate and manage
+                    ultra-complex critical environments. From bespoke solutions to overseeing client teams, we keep your
+                    infrastructure operating effectively
+                    to deliver maximum uptime.</p>
+            </li>
+            <li class="services__item__txt routerHref" data-aos="fade-up" data-aos-duration="800" data-aos-delay="1200" data-aos-once="true" data-href="#/service/connected">
+                <img src="images/img_connected.png">
+                <h3>CONNECTED TECHNOLOGIES</h3>
+                <p>Our services are up to date and support all infrastructures. And our deep knowledge helps you win over
+                    every problem there is to solve effectively. Working to understand your requirements, our consultants
+                    deliver connected solutions to all
+                    your technology questions.</p>
+            </li>
+        </ul>
+    </div>
 
     <!-- 當前選項加上.--on -->
     <ul class="services__dot">
@@ -229,29 +235,31 @@
         <button class="client__control_btn"></button>
         <button class="client__control_btn --right"></button>
     </div>
+    
 
-    <ul class="client__msgBox">
-        <li class="client__msgBox__item">
-            <p class="txt" data-aos="flip-right" data-aos-duration="800" data-aos-delay="600" data-aos-once="true">HSIN YI's Consultant did a great job. This provided great insight for us and will continue to help us make better decisions as we grow. This took several weeks and many revisions due to additional questions. I wanted to make sure you know what a great job he is doing!"</p>
-            <div class="name" data-aos="fade-up" data-aos-duration="600"  data-aos-delay="1000" data-aos-once="true">Michael Cheriton</div>
-            <div class="grade" data-aos="fade-down" data-aos-duration="600"  data-aos-delay="1000" data-aos-once="true">CEO- Founder</div>
-        </li>
-
-        <li class="client__msgBox__item">
-            <p class="txt">"The HSIN YI team are ultimate rock stars! They are a highly professional, educated and experienced team that is dedicated to helping their clients achieve success. One of the best teams I have ever worked with – highly responsive, innovative
-                and leverage best practices. From kick-off to project completion, they never miss a beat and are always there to answer questions and provide intelligent insight. Looking forward to many more projects ahead!"</p>
-            <div class="name">Chris Camp</div>
-            <div class="grade">CEO- Founder</div>
-        </li>
-
-        <li class="client__msgBox__item">
-            <p class="txt">HSIN YI's Consultant did a great job. This provided great insight for us and will continue to help us make better
-            decisions as we grow. This took several weeks and many revisions due to additional questions. I wanted to make sure you
-            know what a great job he is doing!"</p>
-            <div class="name">Michael Cheriton</div>
-            <div class="grade">CEO- Founder</div>
-        </li>
-    </ul>
+    <!-- 左右移動加上transform: translate3d(-33.33%, 0, 0); -->
+    <div class="scrollSlider_area">
+        <ul class="client__msgBox">
+            <li class="client__msgBox__item">
+                <p class="txt" data-aos="flip-right" data-aos-duration="800" data-aos-delay="600" data-aos-once="true">HSIN YI's Consultant did a great job. This provided great insight for us and will continue to help us make better decisions as we grow. This took several weeks and many revisions due to additional questions. I wanted to make sure you know what a great job he is doing!"</p>
+                <div class="name" data-aos="fade-up" data-aos-duration="600"  data-aos-delay="1000" data-aos-once="true">Michael Cheriton</div>
+                <div class="grade" data-aos="fade-down" data-aos-duration="600"  data-aos-delay="1000" data-aos-once="true">CEO- Founder</div>
+            </li>
+            <li class="client__msgBox__item">
+                <p class="txt">"The HSIN YI team are ultimate rock stars! They are a highly professional, educated and experienced team that is dedicated to helping their clients achieve success. One of the best teams I have ever worked with – highly responsive, innovative
+                    and leverage best practices. From kick-off to project completion, they never miss a beat and are always there to answer questions and provide intelligent insight. Looking forward to many more projects ahead!"</p>
+                <div class="name">Chris Camp</div>
+                <div class="grade">CEO- Founder</div>
+            </li>
+            <li class="client__msgBox__item">
+                <p class="txt">HSIN YI's Consultant did a great job. This provided great insight for us and will continue to help us make better
+                decisions as we grow. This took several weeks and many revisions due to additional questions. I wanted to make sure you
+                know what a great job he is doing!"</p>
+                <div class="name">Michael Cheriton</div>
+                <div class="grade">CEO- Founder</div>
+            </li>
+        </ul>
+    </div>
 
     <div class="client__total" data-aos="zoom-in" data-aos-duration="600"  data-aos-delay="1000" data-aos-once="true">99</div>
 </div>
