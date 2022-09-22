@@ -190,7 +190,8 @@ main{
 // footer
 .mailBox{
     padding: 56px 16px;
-    background: url(../images/img_mail.jpg) no-repeat center / cover;    
+    background: url(../images/img_mail.jpg) no-repeat center / cover;   
+    overflow: hidden; 
     
     @include mw_lg{
         padding: 32px 16px;
@@ -250,6 +251,7 @@ main{
 .webMap{
     @include d_f(flex, 0, center);
     padding: 56px 32px;
+    overflow: hidden;
 
     @include mw_md {
         padding: 16px 32px;
