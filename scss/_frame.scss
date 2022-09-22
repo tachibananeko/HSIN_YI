@@ -319,7 +319,7 @@ main{
             }
         }
 
-        @at-root ul:not(.webMap__address) li:not(:first-child)::after {
+        @at-root .webMap ul:not(.webMap__address) li:not(:first-child)::after {
             @extend %transition;
             @include pos_a(bl, 0);
             content: '';
