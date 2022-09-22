@@ -44,10 +44,6 @@
                 font-size: 24px;
             }
 
-            @include mw_xs {
-            font-size: 20px;
-            }
-
             code{
                 display: block;
                 color: map-get($txt_color, white);
@@ -59,7 +55,7 @@
                 }
 
                 @include mw_xs {
-                    font-size: 32px;
+                    font-size: 40px;
                 }
             }
         }
