@@ -319,7 +319,7 @@ main{
             }
         }
 
-        &:not(:first-child)::after {
+        @at-root ul:not(.webMap__address) li:not(:first-child)::after {
             @extend %transition;
             @include pos_a(bl, 0);
             content: '';
@@ -356,9 +356,6 @@ main{
 
     // .webMap__address
     &__address{
-        li:nth-child(2)::after{
-            content: none !important;
-        }
         &::before {
             background: url(../images/icon_address.svg) no-repeat center / contain;
         }

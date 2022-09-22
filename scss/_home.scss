@@ -797,7 +797,9 @@
 
     // .contact__img
     &__img{
+        @include d_f(flex, center, center);
         width: 50%;
+        background: url(../images/img_contact.jpg) no-repeat center / cover;
 
         @include mw_lg{
             width: 40%;
@@ -806,14 +808,54 @@
         @include mw_xs {
             display: none;
         }
+
+        &__address{
+
+            li{
+                @include d_f(flex, center, 0);
+                line-height: 32px;
+                color: map-get($bg_color, gray);
+                font-size: 20px;
+                margin-bottom: 8px;
+
+                &:first-child{
+                    position: relative;
+                    padding: 24px 0;
+                    border-bottom: 1px solid map-get($bg_color, blue);
+                    color: map-get($bg_color, white);
+                    font-size: 32px;
+                    font-weight: bold;
+                    justify-content: center;
+                    margin-bottom: 24px;
+
+                    &::before{
+                        @include pos_a(tbl, 0);
+                        content: '';
+                        width: 40px;
+                        height: 40px;
+                        background: url(../images/icon_address.svg) no-repeat;
+                        margin: auto;
+                    }
+
+                }
+            }
+
+            i{
+                width: 15px;
+                height: 15px;
+                margin-right: 8px;
+            }
+        }
     }
     // .contact__info
     &__info{
         width: 50%;
-        padding: 32px;
+        padding: 32px 64px;
+        background: map-get($bg_color, lightgray);
 
         @include mw_lg {
             width: 60%;
+            padding: 32px;
         }
 
         @include mw_xs {
@@ -825,10 +867,7 @@
             color: map-get($txt_color, darkgray);
             font-size: 32px;
             font-weight: bold;
-
-            @include mw_xs {
-                text-align: center;
-            }
+            text-align: center;
         }
 
         // .contact__info__form
@@ -836,32 +875,28 @@
             @include d_f(flex, 0, 0);
             flex-wrap: wrap;
 
-            li:not(:last-child):not(:nth-last-child(2)){
-                width: calc(50% - 16px);
-                margin-bottom: 32px;
-
-                @include mw_xs {
-                    width: 100%;
-                }
-                
-                &:nth-child(even){
-                    margin-left: 32px;
-
-                    @include mw_xs {
-                        margin-left: 0;
-                    }
-                }
+            li{
+                width: 100%;
+                margin-bottom: 16px;
             }
         }
 
         // .contact__info_btn
         &_btn{
-            width: 100%;
+            display: block;
+            width: calc(100% / 4);
+            min-width: 150px;
             height: 40px;
             background: map-get($bg_color, blue);
             border: 1px solid map-get($bg_color, blue);
+            border-radius: 40px;
             color: map-get($txt_color, white);
             text-transform: uppercase;
+            margin-left: auto;
+
+            @include mw_xs{
+                width: 100%;
+            }
 
             // 手指效果
             @include hoverHandler {
