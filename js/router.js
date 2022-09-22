@@ -104,11 +104,12 @@ Router.route('/privacy', function() {
 
 
 function mainInclude(src) {
+    $('#load').css('display','block');  
     $.ajax({
         url: src,
         success: function(html) {  
             $("#content").html(html);   
-            window.scrollTo({ top: 0 });    
+            window.scrollTo({ top: 0 });  
         },
         // 發送前
         beforeSend: function() {},

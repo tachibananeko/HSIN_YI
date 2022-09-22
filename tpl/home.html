@@ -270,8 +270,7 @@
 
 <script type='text/javascript' src='js/nivoSlider.js'></script>
 <script src="js/owlCarousel.js"></script>
-<script>
-    
+<script> 
     $(window).ready(function() {
         // 頂部輪播
         $("#nivoslider").nivoSlider({
@@ -291,30 +290,34 @@
 
         // 伺服器(servicest)輪播
         $('#servicesCarouse').owlCarousel({
-            margin: 64,
+            
             nav: false,
             dots:true,
             loop: true,
             responsive: {
                 0: {
-                    items: 1
+                    items: 1,
+                    margin: 32
                 },
                 599: {
-                    items: 2
+                    items: 2,
+                    margin: 32
                 },
                 996: {
-                    items: 3
+                    items: 3,
+                    margin: 32
                 },
                 1024: {
-                    items: 3
+                    items: 3,
+                    margin: 32
                 },
                 1180: {
-                    items: 4
+                    items: 4,
+                    margin: 64
                 }
             }
         })
-        chServiceH()
-        
+     
         // 客戶(client)輪播
         $('#clientCarousel').owlCarousel({
             nav: false,
@@ -322,21 +325,8 @@
             loop: true,
             items: 1
         })
+
     });
-
-    function chServiceH() {
-        let array = [];
-        $('#servicesCarouse .owl-item').each(function(){
-            let itemH = $(this).height();
-            array.push(itemH)
-        })
-        $('#servicesCarouse .owl-item li').css('minHeight',`${Math.max(...array)}px`)
-    }
-   
-    $(window).resize(function(){
-        chServiceH()
-    })
-
 
     // 客戶(client)輪播箭頭控制
     $('#client_prev').click(function () {
@@ -346,12 +336,7 @@
         $("#clientCarousel").trigger('next.owl.carousel')  
     })
 
-    
-
-    AOS.init();
-    $('.routerHref').click(function(){
-        $('#toService,#toProtection').removeClass('--active');
-        location = $(this).attr('data-href');
-    })
 
 </script>
+
+<script src="js/shared.js"></script>
