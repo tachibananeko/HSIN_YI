@@ -87,6 +87,9 @@
     bottom: 5px;
     left: 0;
 }
+.servicesCarouse .owl-nav{
+    display: none;
+}
 
 .servicesCarouse .owl-dots .owl-dot span{
     width: 12px;
@@ -97,6 +100,11 @@
 .servicesCarouse .owl-dots .owl-dot.active span{
     background-color: #08c1f2;
     transform: scale(1.3);
+}
+
+.clientCarousel .owl-dots,
+.clientCarousel .owl-nav{
+    display: none;
 }
 </style>
 
@@ -341,7 +349,7 @@
     </div>
     
     <div class="scrollSlider_area">
-        <ul class="client__msgBox owl-carousel owl-theme" id="clientCarousel" data-aos="fade-up" data-aos-duration="600"  data-aos-delay="1000" data-aos-once="true">
+        <ul class="client__msgBox owl-carousel owl-theme clientCarousel" id="clientCarousel" data-aos="fade-up" data-aos-duration="600"  data-aos-delay="1000" data-aos-once="true">
             <li class="client__msgBox__item">
                 <p class="txt" >HSIN YI's Consultant did a great job. This provided great insight for us and will continue to help us make better decisions as we grow. This took several weeks and many revisions due to additional questions. I wanted to make sure you know what a great job he is doing!"</p>
                 <div class="name">Michael Cheriton</div>
