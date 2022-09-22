@@ -1,111 +1,5 @@
 <style>
-    .owl-carousel .owl-stage-outer {
-    position: relative;
-    overflow: hidden;
-    transform: translate3d(0, 0, 0);
-}
 
-.owl-carousel .owl-item,
-.owl-carousel .owl-wrapper {
-    backface-visibility: hidden;
-    transform: translate3d(0, 0, 0);
-}
-
-.owl-carousel .owl-item {
-    min-height: 1px;
-    float: left;
-}
-
-.owl-carousel .owl-nav button.owl-next,
-.owl-carousel .owl-nav button.owl-prev,
-.owl-carousel button.owl-dot {
-    background: 0 0;
-    color: inherit;
-    border: none;
-    padding: 0 !important;
-    font: inherit;
-}
-
-.owl-carousel.owl-drag .owl-item {
-    -ms-touch-action: pan-y;
-    touch-action: pan-y;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-.owl-carousel.owl-grab {
-    cursor: move;
-    cursor: grab;
-}
-
-.owl-theme .owl-dots,
-.owl-theme .owl-nav {
-    text-align: center;
-    -webkit-tap-highlight-color: transparent;
-}
-
-.owl-theme .owl-nav {
-    margin-top: 10px;
-}
-
-.owl-theme .owl-nav [class*="owl-"] {
-    color: #fff;
-    font-size: 14px;
-    margin: 5px;
-    padding: 4px 7px;
-    background: #d6d6d6;
-    display: inline-block;
-    cursor: pointer;
-    border-radius: 3px;
-}
-
-.owl-theme .owl-dots .owl-dot span {
-    width: 10px;
-    height: 10px;
-    margin: 5px 7px;
-    background: #d6d6d6;
-    display: block;
-    transition: opacity 0.2s ease;
-    border-radius: 30px;
-}
-.owl-theme .owl-dots .owl-dot.active span,
-.owl-theme .owl-dots .owl-dot:hover span {
-    background: #869791;
-}
-
-.services{
-    padding-bottom: 60px;
-}
-
-.servicesCarouse li{
-    width: 100%;
-}
-.servicesCarouse .owl-dots{
-    width: 100%;
-    position: absolute;
-    bottom: 5px;
-    left: 0;
-}
-.servicesCarouse .owl-nav{
-    display: none;
-}
-
-.servicesCarouse .owl-dots .owl-dot span{
-    width: 12px;
-    height: 12px;
-    background-color: #999;
-    cursor: pointer;
-}
-.servicesCarouse .owl-dots .owl-dot.active span{
-    background-color: #08c1f2;
-    transform: scale(1.3);
-}
-
-.clientCarousel .owl-dots,
-.clientCarousel .owl-nav{
-    display: none;
-}
 </style>
 
 
@@ -228,51 +122,39 @@
     <!-- 泡泡動畫 end -->
 
     <div class="services__title">OUR SUITE OF SERVICES</div>
-
-    <!-- 
-        pc左右移動加上transform: translate3d(-20%, 0, 0); 
-        ph左右移動加上transform: translate3d(-30%, 0, 0); 
-    -->
-    <div class="scrollSlider_area">
-        <ul class="services__item owl-carousel owl-theme servicesCarouse" id="servicesCarouse">
-            <li class="services__item__txt routerHref" data-aos="fade-up" data-aos-duration="800" data-aos-once="true" data-aos-offset="300" data-href="#/service/consultancy">
-                <img src="images/img_consultancy.png">
-                <h3>CONSULTANCY</h3>
-                <p>We provide strategic advice to your complex technology. And help safeguard your work. Our consultancy
-                    services also offer design and pre-construction services and full audits of your technical estates.</p>
-            </li>
-            <li class="services__item__txt routerHref" data-aos="fade-up" data-aos-duration="800" data-aos-delay="600" data-aos-once="true" data-href="#/service/project">
-                <img src="images/img_project.png">
-                <h3>PROJECT DELIVERY</h3>
-                <p>No work is useful, if it’s not done in a stipulated time and we master in giving it you when promised.
-                    And while doing it, we never compromise on the products quality, also when faced by tight budgets and
-                    deadlines. You can count on us for
-                    the delivery of your project.</p>
-            </li>
-            <li class="services__item__txt routerHref" data-aos="fade-up" data-aos-duration="800" data-aos-delay="900" data-aos-once="true" data-href="#/service/critical">
-                <img src="images/img_critical.png">
-                <h3>CRITICAL OPERATIONS</h3>
-                <p>With over hundreds of contracts to our name worldwide, you can trust us to maintain, operate and manage
-                    ultra-complex critical environments. From bespoke solutions to overseeing client teams, we keep your
-                    infrastructure operating effectively
-                    to deliver maximum uptime.</p>
-            </li>
-            <li class="services__item__txt routerHref" data-aos="fade-up" data-aos-duration="800" data-aos-delay="1200" data-aos-once="true" data-href="#/service/connected">
-                <img src="images/img_connected.png">
-                <h3>CONNECTED TECHNOLOGIES</h3>
-                <p>Our services are up to date and support all infrastructures. And our deep knowledge helps you win over
-                    every problem there is to solve effectively. Working to understand your requirements, our consultants
-                    deliver connected solutions to all
-                    your technology questions.</p>
-            </li>
-        </ul>
+    
+    <div class="services__item owl-carousel owl-theme servicesCarouse" id="servicesCarouse">
+        <div class="services__item__txt routerHref" data-aos="fade-up" data-aos-duration="800" data-aos-once="true" data-aos-offset="300" data-href="#/service/consultancy">
+            <img src="images/img_consultancy.png">
+            <h3>CONSULTANCY</h3>
+            <p>We provide strategic advice to your complex technology. And help safeguard your work. Our consultancy
+                services also offer design and pre-construction services and full audits of your technical estates.</p>
+        </div>
+        <div class="services__item__txt routerHref" data-aos="fade-up" data-aos-duration="800" data-aos-delay="600" data-aos-once="true" data-href="#/service/project">
+            <img src="images/img_project.png">
+            <h3>PROJECT DELIVERY</h3>
+            <p>No work is useful, if it’s not done in a stipulated time and we master in giving it you when promised.
+                And while doing it, we never compromise on the products quality, also when faced by tight budgets and
+                deadlines. You can count on us for
+                the delivery of your project.</p>
+        </div>
+        <div class="services__item__txt routerHref" data-aos="fade-up" data-aos-duration="800" data-aos-delay="900" data-aos-once="true" data-href="#/service/critical">
+            <img src="images/img_critical.png">
+            <h3>CRITICAL OPERATIONS</h3>
+            <p>With over hundreds of contracts to our name worldwide, you can trust us to maintain, operate and manage
+                ultra-complex critical environments. From bespoke solutions to overseeing client teams, we keep your
+                infrastructure operating effectively
+                to deliver maximum uptime.</p>
+        </div>
+        <div class="services__item__txt routerHref" data-aos="fade-up" data-aos-duration="800" data-aos-delay="1200" data-aos-once="true" data-href="#/service/connected">
+            <img src="images/img_connected.png">
+            <h3>CONNECTED TECHNOLOGIES</h3>
+            <p>Our services are up to date and support all infrastructures. And our deep knowledge helps you win over
+                every problem there is to solve effectively. Working to understand your requirements, our consultants
+                deliver connected solutions to all
+                your technology questions.</p>
+        </div>
     </div>
-
-    <!-- 當前選項加上.--on -->
-    <!-- <ul class="services__dot">
-        <li class="--on"></li>
-        <li></li>
-    </ul> -->
 </div>
 <!-- services end -->
 
@@ -409,7 +291,7 @@
 
         // 伺服器(servicest)輪播
         $('#servicesCarouse').owlCarousel({
-            margin: 20,
+            margin: 64,
             nav: false,
             dots:true,
             loop: true,
@@ -418,13 +300,16 @@
                     items: 1
                 },
                 599: {
-                    items: 1
-                },
-                800: {
                     items: 2
                 },
-                1000: {
+                996: {
                     items: 3
+                },
+                1024: {
+                    items: 3
+                },
+                1180: {
+                    items: 4
                 }
             }
         })

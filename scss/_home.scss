@@ -154,43 +154,18 @@
     &__item{
         @extend %transition;
         @include d_f(flex, 0, space-between);
-        width: calc(114% + 64px);
-
-        &::before{
-            content: '';
-            flex: none;
-            width: 64px;
-            height: 0;
-
-            @include mw_lg{
-                width: 32px;
-            }
-        }
+        padding: 0 64px;
+        
 
         // .services__item__txt
         &__txt{
             @extend %hand;
-            width: calc(100% / 3.5 - 64px);
             padding: 16px 24px;
+            height: 100%;
             background: map-get($bg_color, linear);
             border-radius: 5px;
-
-            @include mw_md{
-                min-width: calc(100% / 3 - 64px);
-            }
-
-            @include mw_xs{
-                min-width: calc(100% / 2 - 64px);
-            }
             
-            &+li{
-                margin-left: 64px;
-
-                @include mw_xs{
-                    margin-left: 32px;
-                }
-                
-            }
+            
 
             img{
                 @extend %transition;
@@ -522,6 +497,7 @@
             height: 50px;
             background: url(../images/icon_arrowL.svg) no-repeat center / contain;
             pointer-events: auto;
+            z-index: 2;
 
             &.--right{
                 background-image: url(../images/icon_arrowR.svg);
