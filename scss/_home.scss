@@ -79,7 +79,7 @@
             max-width: calc(100% / 3 * 2);
 
             @include mw_xs{
-                max-width: none;
+                max-width: calc(100% - 32px);
             }
         }
 
@@ -155,6 +155,10 @@
         @extend %transition;
         @include d_f(flex, 0, space-between);
         padding: 0 64px;
+
+        @include mw_lg{
+            padding: 0 32px;
+        }
         
 
         // .services__item__txt
@@ -667,15 +671,17 @@
 
     // .content__title
     &__title{
+        max-width: 1180px;
         color: map-get($txt_color, darkgray);
         font-size: 32px;
         font-weight: bold;
-        margin-bottom: 32px;
+        margin: auto auto 32px;
     }
 
     // .content__img
     &__img{
-        margin-bottom: 32px;
+        max-width: 1180px;
+        margin: auto auto 32px;
     }
 
     // .content__aside
@@ -731,7 +737,10 @@
     
     // .content__txt
     &__txt{
+        max-width: 1180px;
         line-height: 24px;
+        margin: auto auto 32px;
+        
         @at-root .--half .content__txt{
             width: calc(75% - 64px);
 
