@@ -38,30 +38,30 @@ window.Router.init();
 
 // 路由呼叫路徑
 Router.route('/home', function() {
-    mainInclude('tpl/home.html');
+    mainInclude('http://54.179.177.60/wp-content/themes/wk-finance/tpl/home.html');
     $('#topMenu li').removeClass('--on');
 });
 Router.route('/about', function() {
-    mainInclude('tpl/about.html');
+    mainInclude('http://54.179.177.60/wp-content/themes/wk-finance/tpl/about.html');
     $('#topMenu li').removeClass('--on');
     $('#toAbout').addClass('--on');
 });
 
 
 Router.route('/service/consultancy', function() {
-    mainInclude('tpl/consultancy.html');
+    mainInclude('http://54.179.177.60/wp-content/themes/wk-finance/tpl/consultancy.html');
     chServiceMenu(0);
 });
 Router.route('/service/project', function() {
-    mainInclude('tpl/project.html');
+    mainInclude('http://54.179.177.60/wp-content/themes/wk-finance/tpl/project.html');
     chServiceMenu(1);
 });
 Router.route('/service/critical', function() {
-    mainInclude('tpl/critical.html');
+    mainInclude('http://54.179.177.60/wp-content/themes/wk-finance/tpl/critical.html');
     chServiceMenu(2);
 });
 Router.route('/service/connected', function() {
-    mainInclude('tpl/connected.html');
+    mainInclude('http://54.179.177.60/wp-content/themes/wk-finance/tpl/connected.html');
     chServiceMenu(3);
 });
 function chServiceMenu(num){
@@ -72,15 +72,15 @@ function chServiceMenu(num){
 
 
 Router.route('/protection/application', function() {
-    mainInclude('tpl/application.html');
+    mainInclude('http://54.179.177.60/wp-content/themes/wk-finance/tpl/application.html');
     chProtectionMenu(0);
 });
 Router.route('/protection/origin', function() {
-    mainInclude('tpl/origin.html');
+    mainInclude('http://54.179.177.60/wp-content/themes/wk-finance/tpl/origin.html');
     chProtectionMenu(1);
 });
 Router.route('/protection/dns', function() {
-    mainInclude('tpl/dns.html');
+    mainInclude('http://54.179.177.60/wp-content/themes/wk-finance/tpl/dns.html');
     chProtectionMenu(2);
 });
 function chProtectionMenu(num){
@@ -92,13 +92,13 @@ function chProtectionMenu(num){
 
 
 Router.route('/contact', function() {
-    mainInclude('tpl/contact.html');
+    mainInclude('http://54.179.177.60/wp-content/themes/wk-finance/tpl/contact.html');
     $('#topMenu li').removeClass('--on');
     $('#toContact').addClass('--on');
 });
 
 Router.route('/privacy', function() {
-    mainInclude('tpl/privacy.html');
+    mainInclude('http://54.179.177.60/wp-content/themes/wk-finance/tpl/privacy.html');
     $('#topMenu li').removeClass('--on');
 });
 
